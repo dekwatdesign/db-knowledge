@@ -1,0 +1,46 @@
+# `ndrugtempreorder`
+
+## Columns
+
+| Column | Type | Null | Key | Default | Extra | Comment |
+|---|---|---|---|---|---|---|
+| guarantor | varchar(35) | YES |  | NULL |  |  |
+| icode | varchar(7) | YES |  | NULL |  |  |
+| linkref | varchar(100) | YES |  | NULL |  |  |
+| paydate | datetime | YES |  | NULL |  |  |
+| payref | varchar(6) | YES |  | NULL |  |  |
+| ptype | char(2) | YES |  | NULL |  |  |
+| qty | int(11) | YES |  | NULL |  |  |
+| recpcode | varchar(4) | YES |  | NULL |  |  |
+| hos_guid | char(38) | YES | MUL | NULL |  |  |
+| hos_guid_ext | varchar(64) | YES | MUL | NULL |  |  |
+
+## Indexes
+
+| Index | Column | Unique | Sequence |
+|---|---|---|---|
+| ix_hos_guid | hos_guid | no | 1 |
+| ix_hos_guid_ext | hos_guid_ext | no | 1 |
+
+## Foreign keys
+
+No declared foreign keys.
+
+## Sample rows (1)
+
+```json
+[
+  {
+    "guarantor": "ชัยพร สุรเตมีย์กุล",
+    "icode": "4500005",
+    "linkref": "xxx",
+    "paydate": "2002-06-13 00:00:00",
+    "payref": "450010",
+    "ptype": "01",
+    "qty": 5,
+    "recpcode": "D001",
+    "hos_guid": null,
+    "hos_guid_ext": null
+  }
+]
+```

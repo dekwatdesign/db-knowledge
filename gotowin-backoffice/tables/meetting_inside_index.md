@@ -1,0 +1,210 @@
+# `meetting_inside_index`
+
+## Columns
+
+| Column | Type | Null | Key | Default | Extra | Comment |
+|---|---|---|---|---|---|---|
+| MEETING_INSIDE_ID | int | NO | PRI | NULL | auto_increment |  |
+| MEETING_INSIDE_CODE | varchar(50) | YES |  | NULL |  |  |
+| MEETING_INSIDE_NO | varchar(50) | YES |  | NULL |  |  |
+| MEETING_INSIDE_BUDGET | varchar(50) | YES |  | NULL |  |  |
+| MEETING_INSIDE_DATE | date | YES |  | NULL |  |  |
+| MEETING_INSIDE_STARTTIME | time | YES |  | NULL |  |  |
+| MEETING_INSIDE_ENDTIME | time | YES |  | NULL |  |  |
+| MEETING_INSIDE_TITLE | varchar(100) | YES |  | NULL |  |  |
+| MEETING_INSIDE_PRESIDENT | varchar(100) | YES |  | NULL |  |  |
+| MEETING_INSIDE_TYPE | varchar(100) | YES |  | NULL |  |  |
+| MEETING_INSIDE_LOCATION | varchar(100) | YES |  | NULL |  |  |
+| MEETING_INSIDE_USERSAVE | varchar(100) | YES |  | NULL |  |  |
+| MEETING_INSIDE_USERSAVE_NAME | varchar(100) | YES |  | NULL |  |  |
+| created_at | datetime | YES |  | NULL |  |  |
+| updated_at | datetime | YES |  | NULL |  |  |
+| MEETING_STATUS | varchar(100) | YES |  | NULL |  |  |
+| ROOM_ID | varchar(10) | YES |  | NULL |  |  |
+| MEETING_INSIDE_COMMENT | varchar(255) | YES |  | NULL |  |  |
+| MEETING_INSIDE_FILE | mediumblob | YES |  | NULL |  |  |
+
+## Indexes
+
+| Index | Column | Unique | Sequence |
+|---|---|---|---|
+| PRIMARY | MEETING_INSIDE_ID | yes | 1 |
+
+## Foreign keys
+
+No declared foreign keys.
+
+## Sample rows (8)
+
+```json
+[
+  {
+    "MEETING_INSIDE_ID": 1,
+    "MEETING_INSIDE_CODE": "M65-0001",
+    "MEETING_INSIDE_NO": "1",
+    "MEETING_INSIDE_BUDGET": "2565",
+    "MEETING_INSIDE_DATE": "2022-01-13",
+    "MEETING_INSIDE_STARTTIME": "13:00:00",
+    "MEETING_INSIDE_ENDTIME": "15:00:00",
+    "MEETING_INSIDE_TITLE": "ประชุมคณะกรรมการ IM",
+    "MEETING_INSIDE_PRESIDENT": "75",
+    "MEETING_INSIDE_TYPE": "4",
+    "MEETING_INSIDE_LOCATION": null,
+    "MEETING_INSIDE_USERSAVE": "63",
+    "MEETING_INSIDE_USERSAVE_NAME": "[MASKED_FULLNAME]",
+    "created_at": "2022-01-17 09:03:59",
+    "updated_at": "2022-01-17 09:04:55",
+    "MEETING_STATUS": "APPLY",
+    "ROOM_ID": "1",
+    "MEETING_INSIDE_COMMENT": null,
+    "MEETING_INSIDE_FILE": null
+  },
+  {
+    "MEETING_INSIDE_ID": 2,
+    "MEETING_INSIDE_CODE": "M65-0002",
+    "MEETING_INSIDE_NO": "6",
+    "MEETING_INSIDE_BUDGET": "2565",
+    "MEETING_INSIDE_DATE": "2022-01-17",
+    "MEETING_INSIDE_STARTTIME": "10:00:00",
+    "MEETING_INSIDE_ENDTIME": "12:00:00",
+    "MEETING_INSIDE_TITLE": "ประชุมคณะกรรมการ CFO",
+    "MEETING_INSIDE_PRESIDENT": "203",
+    "MEETING_INSIDE_TYPE": "3",
+    "MEETING_INSIDE_LOCATION": null,
+    "MEETING_INSIDE_USERSAVE": "63",
+    "MEETING_INSIDE_USERSAVE_NAME": "[MASKED_FULLNAME]",
+    "created_at": "2022-01-17 15:42:49",
+    "updated_at": "2022-01-17 15:42:49",
+    "MEETING_STATUS": "APPLY",
+    "ROOM_ID": "3",
+    "MEETING_INSIDE_COMMENT": null,
+    "MEETING_INSIDE_FILE": null
+  },
+  {
+    "MEETING_INSIDE_ID": 3,
+    "MEETING_INSIDE_CODE": "M65-0003",
+    "MEETING_INSIDE_NO": "1",
+    "MEETING_INSIDE_BUDGET": "2565",
+    "MEETING_INSIDE_DATE": "2022-01-17",
+    "MEETING_INSIDE_STARTTIME": "13:00:00",
+    "MEETING_INSIDE_ENDTIME": "15:00:00",
+    "MEETING_INSIDE_TITLE": "ประชุมกลุ่มงานยุทธศาสตร์และสารสนเทศ",
+    "MEETING_INSIDE_PRESIDENT": "53",
+    "MEETING_INSIDE_TYPE": "6",
+    "MEETING_INSIDE_LOCATION": null,
+    "MEETING_INSIDE_USERSAVE": "63",
+    "MEETING_INSIDE_USERSAVE_NAME": "[MASKED_FULLNAME]",
+    "created_at": "2022-01-17 15:45:35",
+    "updated_at": "2022-01-17 15:45:35",
+    "MEETING_STATUS": "APPLY",
+    "ROOM_ID": "4",
+    "MEETING_INSIDE_COMMENT": null,
+    "MEETING_INSIDE_FILE": null
+  },
+  {
+    "MEETING_INSIDE_ID": 4,
+    "MEETING_INSIDE_CODE": "M65-0004",
+    "MEETING_INSIDE_NO": "1",
+    "MEETING_INSIDE_BUDGET": "2565",
+    "MEETING_INSIDE_DATE": "2022-01-19",
+    "MEETING_INSIDE_STARTTIME": "13:00:00",
+    "MEETING_INSIDE_ENDTIME": "16:00:00",
+    "MEETING_INSIDE_TITLE": "ประชุมคณะกรรมการบริหารโรงพยาบาล",
+    "MEETING_INSIDE_PRESIDENT": "203",
+    "MEETING_INSIDE_TYPE": "3",
+    "MEETING_INSIDE_LOCATION": null,
+    "MEETING_INSIDE_USERSAVE": "63",
+    "MEETING_INSIDE_USERSAVE_NAME": "[MASKED_FULLNAME]",
+    "created_at": "2022-01-20 09:13:00",
+    "updated_at": "2022-01-20 09:15:36",
+    "MEETING_STATUS": "APPLY",
+    "ROOM_ID": "2",
+    "MEETING_INSIDE_COMMENT": null,
+    "MEETING_INSIDE_FILE": "b'meetinside_4.pdf'"
+  },
+  {
+    "MEETING_INSIDE_ID": 5,
+    "MEETING_INSIDE_CODE": "M65-0005",
+    "MEETING_INSIDE_NO": "1",
+    "MEETING_INSIDE_BUDGET": "2565",
+    "MEETING_INSIDE_DATE": "2022-01-27",
+    "MEETING_INSIDE_STARTTIME": "14:00:00",
+    "MEETING_INSIDE_ENDTIME": "15:30:00",
+    "MEETING_INSIDE_TITLE": "ประชุมคณะกรรมการEQM",
+    "MEETING_INSIDE_PRESIDENT": "75",
+    "MEETING_INSIDE_TYPE": "8",
+    "MEETING_INSIDE_LOCATION": null,
+    "MEETING_INSIDE_USERSAVE": "147",
+    "MEETING_INSIDE_USERSAVE_NAME": "[MASKED_FULLNAME]",
+    "created_at": "2022-01-27 09:49:03",
+    "updated_at": "2022-01-27 09:49:03",
+    "MEETING_STATUS": "APPLY",
+    "ROOM_ID": "1",
+    "MEETING_INSIDE_COMMENT": null,
+    "MEETING_INSIDE_FILE": null
+  },
+  {
+    "MEETING_INSIDE_ID": 6,
+    "MEETING_INSIDE_CODE": "M65-0006",
+    "MEETING_INSIDE_NO": "4",
+    "MEETING_INSIDE_BUDGET": "2565",
+    "MEETING_INSIDE_DATE": "2022-02-22",
+    "MEETING_INSIDE_STARTTIME": "13:00:00",
+    "MEETING_INSIDE_ENDTIME": "16:00:00",
+    "MEETING_INSIDE_TITLE": "ประชุมคณะกรรมการ IM",
+    "MEETING_INSIDE_PRESIDENT": "75",
+    "MEETING_INSIDE_TYPE": "4",
+    "MEETING_INSIDE_LOCATION": null,
+    "MEETING_INSIDE_USERSAVE": "63",
+    "MEETING_INSIDE_USERSAVE_NAME": "[MASKED_FULLNAME]",
+    "created_at": "2022-02-21 10:43:35",
+    "updated_at": "2022-02-22 22:58:57",
+    "MEETING_STATUS": "APPLY",
+    "ROOM_ID": "1",
+    "MEETING_INSIDE_COMMENT": null,
+    "MEETING_INSIDE_FILE": null
+  },
+  {
+    "MEETING_INSIDE_ID": 7,
+    "MEETING_INSIDE_CODE": "M65-0007",
+    "MEETING_INSIDE_NO": "1",
+    "MEETING_INSIDE_BUDGET": "2565",
+    "MEETING_INSIDE_DATE": "2022-03-11",
+    "MEETING_INSIDE_STARTTIME": "13:00:00",
+    "MEETING_INSIDE_ENDTIME": "16:00:00",
+    "MEETING_INSIDE_TITLE": "วางแผนการดำเนินงานตรวจสุขภาพประจำปี",
+    "MEETING_INSIDE_PRESIDENT": "76",
+    "MEETING_INSIDE_TYPE": "6",
+    "MEETING_INSIDE_LOCATION": null,
+    "MEETING_INSIDE_USERSAVE": "158",
+    "MEETING_INSIDE_USERSAVE_NAME": "[MASKED_FULLNAME]",
+    "created_at": "2022-02-25 15:17:27",
+    "updated_at": "2022-02-25 15:17:27",
+    "MEETING_STATUS": "APPLY",
+    "ROOM_ID": "1",
+    "MEETING_INSIDE_COMMENT": null,
+    "MEETING_INSIDE_FILE": null
+  },
+  {
+    "MEETING_INSIDE_ID": 8,
+    "MEETING_INSIDE_CODE": "M65-0008",
+    "MEETING_INSIDE_NO": "5",
+    "MEETING_INSIDE_BUDGET": "2565",
+    "MEETING_INSIDE_DATE": "2022-03-29",
+    "MEETING_INSIDE_STARTTIME": "13:00:00",
+    "MEETING_INSIDE_ENDTIME": "15:00:00",
+    "MEETING_INSIDE_TITLE": "ประชุมคณะกรรมการ IM",
+    "MEETING_INSIDE_PRESIDENT": "75",
+    "MEETING_INSIDE_TYPE": "10",
+    "MEETING_INSIDE_LOCATION": null,
+    "MEETING_INSIDE_USERSAVE": "64",
+    "MEETING_INSIDE_USERSAVE_NAME": "[MASKED_FULLNAME]",
+    "created_at": "2022-03-30 10:22:49",
+    "updated_at": "2022-03-30 10:22:49",
+    "MEETING_STATUS": "APPLY",
+    "ROOM_ID": "1",
+    "MEETING_INSIDE_COMMENT": null,
+    "MEETING_INSIDE_FILE": "b'meetinside_8.pdf'"
+  }
+]
+```

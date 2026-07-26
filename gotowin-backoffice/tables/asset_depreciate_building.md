@@ -1,0 +1,138 @@
+# `asset_depreciate_building`
+
+## Columns
+
+| Column | Type | Null | Key | Default | Extra | Comment |
+|---|---|---|---|---|---|---|
+| DEP_BUILDING_ID | int | NO | PRI | NULL | auto_increment |  |
+| DEP_BUILDING_ASSET_ID | int | YES |  | NULL |  |  |
+| DEP_BUILDING_YEAR | varchar(255) | YES |  | NULL |  |  |
+| DEP_BUILDING_MONTH | varchar(255) | YES |  | NULL |  |  |
+| DEP_BUILDING_PRICE | varchar(65) | YES |  | NULL |  |  |
+| DEP_BUILDING_FORWARD | varchar(65) | YES |  | NULL |  |  |
+| DEP_BUILDING_DEPRECIATE | varchar(65) | YES |  | NULL |  |  |
+| DEP_BUILDING_CUMULATIVE | varchar(65) | YES |  | NULL |  |  |
+| DEP_BUILDING_VALUE | varchar(65) | YES |  | NULL |  |  |
+| updated_at | datetime | YES |  | NULL |  |  |
+| created_at | datetime | YES |  | NULL |  |  |
+
+## Indexes
+
+| Index | Column | Unique | Sequence |
+|---|---|---|---|
+| PRIMARY | DEP_BUILDING_ID | yes | 1 |
+
+## Foreign keys
+
+No declared foreign keys.
+
+## Sample rows (8)
+
+```json
+[
+  {
+    "DEP_BUILDING_ID": 1807,
+    "DEP_BUILDING_ASSET_ID": 3,
+    "DEP_BUILDING_YEAR": "2540",
+    "DEP_BUILDING_MONTH": "10",
+    "DEP_BUILDING_PRICE": "11902314.00",
+    "DEP_BUILDING_FORWARD": "0",
+    "DEP_BUILDING_DEPRECIATE": "14078.005806452",
+    "DEP_BUILDING_CUMULATIVE": "14078.005806452",
+    "DEP_BUILDING_VALUE": "11888235.994194",
+    "updated_at": "2022-01-18 11:49:31",
+    "created_at": "2022-01-18 11:49:31"
+  },
+  {
+    "DEP_BUILDING_ID": 1808,
+    "DEP_BUILDING_ASSET_ID": 3,
+    "DEP_BUILDING_YEAR": "2540",
+    "DEP_BUILDING_MONTH": "11",
+    "DEP_BUILDING_PRICE": "11902314.00",
+    "DEP_BUILDING_FORWARD": "14078.005806452",
+    "DEP_BUILDING_DEPRECIATE": "39674.38",
+    "DEP_BUILDING_CUMULATIVE": "53752.385806452",
+    "DEP_BUILDING_VALUE": "11848561.614194",
+    "updated_at": "2022-01-18 11:49:31",
+    "created_at": "2022-01-18 11:49:31"
+  },
+  {
+    "DEP_BUILDING_ID": 1809,
+    "DEP_BUILDING_ASSET_ID": 3,
+    "DEP_BUILDING_YEAR": "2540",
+    "DEP_BUILDING_MONTH": "12",
+    "DEP_BUILDING_PRICE": "11902314.00",
+    "DEP_BUILDING_FORWARD": "53752.385806452",
+    "DEP_BUILDING_DEPRECIATE": "39674.38",
+    "DEP_BUILDING_CUMULATIVE": "93426.765806452",
+    "DEP_BUILDING_VALUE": "11808887.234194",
+    "updated_at": "2022-01-18 11:49:31",
+    "created_at": "2022-01-18 11:49:31"
+  },
+  {
+    "DEP_BUILDING_ID": 1810,
+    "DEP_BUILDING_ASSET_ID": 3,
+    "DEP_BUILDING_YEAR": "2541",
+    "DEP_BUILDING_MONTH": "1",
+    "DEP_BUILDING_PRICE": "11902314.00",
+    "DEP_BUILDING_FORWARD": "93426.765806452",
+    "DEP_BUILDING_DEPRECIATE": "39674.38",
+    "DEP_BUILDING_CUMULATIVE": "133101.14580645",
+    "DEP_BUILDING_VALUE": "11769212.854194",
+    "updated_at": "2022-01-18 11:49:31",
+    "created_at": "2022-01-18 11:49:31"
+  },
+  {
+    "DEP_BUILDING_ID": 1811,
+    "DEP_BUILDING_ASSET_ID": 3,
+    "DEP_BUILDING_YEAR": "2541",
+    "DEP_BUILDING_MONTH": "2",
+    "DEP_BUILDING_PRICE": "11902314.00",
+    "DEP_BUILDING_FORWARD": "133101.14580645",
+    "DEP_BUILDING_DEPRECIATE": "39674.38",
+    "DEP_BUILDING_CUMULATIVE": "172775.52580645",
+    "DEP_BUILDING_VALUE": "11729538.474194",
+    "updated_at": "2022-01-18 11:49:31",
+    "created_at": "2022-01-18 11:49:31"
+  },
+  {
+    "DEP_BUILDING_ID": 1812,
+    "DEP_BUILDING_ASSET_ID": 3,
+    "DEP_BUILDING_YEAR": "2541",
+    "DEP_BUILDING_MONTH": "3",
+    "DEP_BUILDING_PRICE": "11902314.00",
+    "DEP_BUILDING_FORWARD": "172775.52580645",
+    "DEP_BUILDING_DEPRECIATE": "39674.38",
+    "DEP_BUILDING_CUMULATIVE": "212449.90580645",
+    "DEP_BUILDING_VALUE": "11689864.094194",
+    "updated_at": "2022-01-18 11:49:31",
+    "created_at": "2022-01-18 11:49:31"
+  },
+  {
+    "DEP_BUILDING_ID": 1813,
+    "DEP_BUILDING_ASSET_ID": 3,
+    "DEP_BUILDING_YEAR": "2541",
+    "DEP_BUILDING_MONTH": "4",
+    "DEP_BUILDING_PRICE": "11902314.00",
+    "DEP_BUILDING_FORWARD": "212449.90580645",
+    "DEP_BUILDING_DEPRECIATE": "39674.38",
+    "DEP_BUILDING_CUMULATIVE": "252124.28580645",
+    "DEP_BUILDING_VALUE": "11650189.714194",
+    "updated_at": "2022-01-18 11:49:31",
+    "created_at": "2022-01-18 11:49:31"
+  },
+  {
+    "DEP_BUILDING_ID": 1814,
+    "DEP_BUILDING_ASSET_ID": 3,
+    "DEP_BUILDING_YEAR": "2541",
+    "DEP_BUILDING_MONTH": "5",
+    "DEP_BUILDING_PRICE": "11902314.00",
+    "DEP_BUILDING_FORWARD": "252124.28580645",
+    "DEP_BUILDING_DEPRECIATE": "39674.38",
+    "DEP_BUILDING_CUMULATIVE": "291798.66580645",
+    "DEP_BUILDING_VALUE": "11610515.334194",
+    "updated_at": "2022-01-18 11:49:31",
+    "created_at": "2022-01-18 11:49:31"
+  }
+]
+```

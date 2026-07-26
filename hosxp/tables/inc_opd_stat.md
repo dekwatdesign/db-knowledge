@@ -1,0 +1,457 @@
+# `inc_opd_stat`
+
+## Columns
+
+| Column | Type | Null | Key | Default | Extra | Comment |
+|---|---|---|---|---|---|---|
+| vn | varchar(13) | NO | PRI |  |  |  |
+| hn | varchar(9) | YES | MUL | NULL |  |  |
+| vstdate | date | YES | MUL | NULL |  |  |
+| pttype | char(2) | YES | MUL | NULL |  |  |
+| pcode | char(2) | YES |  | NULL |  |  |
+| inc01 | double(15,3) | YES |  | NULL |  |  |
+| inc02 | double(15,3) | YES |  | NULL |  |  |
+| inc03 | double(15,3) | YES |  | NULL |  |  |
+| inc04 | double(15,3) | YES |  | NULL |  |  |
+| inc05 | double(15,3) | YES |  | NULL |  |  |
+| inc06 | double(15,3) | YES |  | NULL |  |  |
+| inc07 | double(15,3) | YES |  | NULL |  |  |
+| inc08 | double(15,3) | YES |  | NULL |  |  |
+| inc09 | double(15,3) | YES |  | NULL |  |  |
+| inc10 | double(15,3) | YES |  | NULL |  |  |
+| inc11 | double(15,3) | YES |  | NULL |  |  |
+| inc12 | double(15,3) | YES |  | NULL |  |  |
+| inc13 | double(15,3) | YES |  | NULL |  |  |
+| inc14 | double(15,3) | YES |  | NULL |  |  |
+| inc15 | double(15,3) | YES |  | NULL |  |  |
+| inc16 | double(15,3) | YES |  | NULL |  |  |
+| inc17 | double(15,3) | YES |  | NULL |  |  |
+| income | double(15,3) | YES |  | NULL |  |  |
+| inc_drug | double(15,3) | YES |  | NULL |  |  |
+| inc_nondrug | double(15,3) | YES |  | NULL |  |  |
+| uinc01 | double(15,3) | YES |  | NULL |  |  |
+| uinc02 | double(15,3) | YES |  | NULL |  |  |
+| uinc03 | double(15,3) | YES |  | NULL |  |  |
+| uinc04 | double(15,3) | YES |  | NULL |  |  |
+| uinc05 | double(15,3) | YES |  | NULL |  |  |
+| uinc06 | double(15,3) | YES |  | NULL |  |  |
+| uinc07 | double(15,3) | YES |  | NULL |  |  |
+| uinc08 | double(15,3) | YES |  | NULL |  |  |
+| uinc09 | double(15,3) | YES |  | NULL |  |  |
+| uinc10 | double(15,3) | YES |  | NULL |  |  |
+| uinc11 | double(15,3) | YES |  | NULL |  |  |
+| uinc12 | double(15,3) | YES |  | NULL |  |  |
+| uinc13 | double(15,3) | YES |  | NULL |  |  |
+| uinc14 | double(15,3) | YES |  | NULL |  |  |
+| uinc15 | double(15,3) | YES |  | NULL |  |  |
+| uinc16 | double(15,3) | YES |  | NULL |  |  |
+| uinc17 | double(15,3) | YES |  | NULL |  |  |
+| uincome | double(15,3) | YES |  | NULL |  |  |
+| uinc_drug | double(15,3) | YES |  | NULL |  |  |
+| uinc_nondrug | double(15,3) | YES |  | NULL |  |  |
+| hos_guid | char(38) | YES | MUL | NULL |  |  |
+
+## Indexes
+
+| Index | Column | Unique | Sequence |
+|---|---|---|---|
+| hn | hn | no | 1 |
+| ix_hos_guid | hos_guid | no | 1 |
+| PRIMARY | vn | yes | 1 |
+| pttype | pttype | no | 1 |
+| vstdate | vstdate | no | 1 |
+
+## Foreign keys
+
+No declared foreign keys.
+
+## Sample rows (8)
+
+```json
+[
+  {
+    "vn": "051017175759",
+    "hn": "530054348",
+    "vstdate": "1962-10-17",
+    "pttype": "10",
+    "pcode": null,
+    "inc01": 0.0,
+    "inc02": 0.0,
+    "inc03": 0.0,
+    "inc04": 0.0,
+    "inc05": 0.0,
+    "inc06": 0.0,
+    "inc07": 0.0,
+    "inc08": 0.0,
+    "inc09": 0.0,
+    "inc10": 0.0,
+    "inc11": 0.0,
+    "inc12": 0.0,
+    "inc13": 0.0,
+    "inc14": 0.0,
+    "inc15": 0.0,
+    "inc16": 0.0,
+    "inc17": 0.0,
+    "income": 70.0,
+    "inc_drug": 0.0,
+    "inc_nondrug": 0.0,
+    "uinc01": 0.0,
+    "uinc02": 0.0,
+    "uinc03": 0.0,
+    "uinc04": 0.0,
+    "uinc05": 0.0,
+    "uinc06": 0.0,
+    "uinc07": 0.0,
+    "uinc08": 0.0,
+    "uinc09": 0.0,
+    "uinc10": 0.0,
+    "uinc11": 0.0,
+    "uinc12": 0.0,
+    "uinc13": 0.0,
+    "uinc14": 0.0,
+    "uinc15": 0.0,
+    "uinc16": 0.0,
+    "uinc17": 0.0,
+    "uincome": 0.0,
+    "uinc_drug": 0.0,
+    "uinc_nondrug": 0.0,
+    "hos_guid": null
+  },
+  {
+    "vn": "250101153511",
+    "hn": "570002047",
+    "vstdate": "1982-01-01",
+    "pttype": "74",
+    "pcode": null,
+    "inc01": 0.0,
+    "inc02": 0.0,
+    "inc03": 0.0,
+    "inc04": 0.0,
+    "inc05": 0.0,
+    "inc06": 0.0,
+    "inc07": 0.0,
+    "inc08": 0.0,
+    "inc09": 0.0,
+    "inc10": 0.0,
+    "inc11": 0.0,
+    "inc12": 0.0,
+    "inc13": 0.0,
+    "inc14": 0.0,
+    "inc15": 0.0,
+    "inc16": 0.0,
+    "inc17": 0.0,
+    "income": 0.0,
+    "inc_drug": 0.0,
+    "inc_nondrug": 0.0,
+    "uinc01": 0.0,
+    "uinc02": 0.0,
+    "uinc03": 0.0,
+    "uinc04": 0.0,
+    "uinc05": 0.0,
+    "uinc06": 0.0,
+    "uinc07": 0.0,
+    "uinc08": 0.0,
+    "uinc09": 0.0,
+    "uinc10": 0.0,
+    "uinc11": 0.0,
+    "uinc12": 0.0,
+    "uinc13": 0.0,
+    "uinc14": 70.0,
+    "uinc15": 0.0,
+    "uinc16": 0.0,
+    "uinc17": 0.0,
+    "uincome": 70.0,
+    "uinc_drug": 0.0,
+    "uinc_nondrug": 0.0,
+    "hos_guid": null
+  },
+  {
+    "vn": "250109164252",
+    "hn": "530122152",
+    "vstdate": "1982-01-09",
+    "pttype": "11",
+    "pcode": null,
+    "inc01": 0.0,
+    "inc02": 0.0,
+    "inc03": 0.0,
+    "inc04": 0.0,
+    "inc05": 0.0,
+    "inc06": 0.0,
+    "inc07": 0.0,
+    "inc08": 0.0,
+    "inc09": 0.0,
+    "inc10": 0.0,
+    "inc11": 0.0,
+    "inc12": 0.0,
+    "inc13": 0.0,
+    "inc14": 0.0,
+    "inc15": 0.0,
+    "inc16": 0.0,
+    "inc17": 0.0,
+    "income": 0.0,
+    "inc_drug": 0.0,
+    "inc_nondrug": 0.0,
+    "uinc01": 0.0,
+    "uinc02": 0.0,
+    "uinc03": 0.0,
+    "uinc04": 0.0,
+    "uinc05": 0.0,
+    "uinc06": 0.0,
+    "uinc07": 0.0,
+    "uinc08": 0.0,
+    "uinc09": 0.0,
+    "uinc10": 0.0,
+    "uinc11": 0.0,
+    "uinc12": 0.0,
+    "uinc13": 0.0,
+    "uinc14": 70.0,
+    "uinc15": 0.0,
+    "uinc16": 0.0,
+    "uinc17": 0.0,
+    "uincome": 70.0,
+    "uinc_drug": 0.0,
+    "uinc_nondrug": 0.0,
+    "hos_guid": null
+  },
+  {
+    "vn": "250112144831",
+    "hn": "600000969",
+    "vstdate": "1982-01-12",
+    "pttype": "11",
+    "pcode": null,
+    "inc01": 0.0,
+    "inc02": 0.0,
+    "inc03": 0.0,
+    "inc04": 0.0,
+    "inc05": 0.0,
+    "inc06": 0.0,
+    "inc07": 0.0,
+    "inc08": 0.0,
+    "inc09": 0.0,
+    "inc10": 0.0,
+    "inc11": 0.0,
+    "inc12": 0.0,
+    "inc13": 0.0,
+    "inc14": 0.0,
+    "inc15": 0.0,
+    "inc16": 0.0,
+    "inc17": 0.0,
+    "income": 0.0,
+    "inc_drug": 0.0,
+    "inc_nondrug": 0.0,
+    "uinc01": 0.0,
+    "uinc02": 0.0,
+    "uinc03": 0.0,
+    "uinc04": 0.0,
+    "uinc05": 0.0,
+    "uinc06": 0.0,
+    "uinc07": 0.0,
+    "uinc08": 0.0,
+    "uinc09": 0.0,
+    "uinc10": 0.0,
+    "uinc11": 0.0,
+    "uinc12": 0.0,
+    "uinc13": 0.0,
+    "uinc14": 50.0,
+    "uinc15": 0.0,
+    "uinc16": 0.0,
+    "uinc17": 0.0,
+    "uincome": 50.0,
+    "uinc_drug": 0.0,
+    "uinc_nondrug": 0.0,
+    "hos_guid": null
+  },
+  {
+    "vn": "250119130001",
+    "hn": "530107252",
+    "vstdate": "1982-01-19",
+    "pttype": "11",
+    "pcode": null,
+    "inc01": 0.0,
+    "inc02": 0.0,
+    "inc03": 0.0,
+    "inc04": 0.0,
+    "inc05": 0.0,
+    "inc06": 0.0,
+    "inc07": 0.0,
+    "inc08": 0.0,
+    "inc09": 0.0,
+    "inc10": 0.0,
+    "inc11": 0.0,
+    "inc12": 0.0,
+    "inc13": 0.0,
+    "inc14": 0.0,
+    "inc15": 0.0,
+    "inc16": 0.0,
+    "inc17": 0.0,
+    "income": 0.0,
+    "inc_drug": 0.0,
+    "inc_nondrug": 0.0,
+    "uinc01": 0.0,
+    "uinc02": 0.0,
+    "uinc03": 0.0,
+    "uinc04": 0.0,
+    "uinc05": 0.0,
+    "uinc06": 0.0,
+    "uinc07": 0.0,
+    "uinc08": 0.0,
+    "uinc09": 0.0,
+    "uinc10": 0.0,
+    "uinc11": 0.0,
+    "uinc12": 0.0,
+    "uinc13": 0.0,
+    "uinc14": 70.0,
+    "uinc15": 0.0,
+    "uinc16": 0.0,
+    "uinc17": 0.0,
+    "uincome": 70.0,
+    "uinc_drug": 0.0,
+    "uinc_nondrug": 0.0,
+    "hos_guid": null
+  },
+  {
+    "vn": "250201113358",
+    "hn": "560000577",
+    "vstdate": "1982-02-01",
+    "pttype": "02",
+    "pcode": null,
+    "inc01": 0.0,
+    "inc02": 0.0,
+    "inc03": 0.0,
+    "inc04": 0.0,
+    "inc05": 0.0,
+    "inc06": 0.0,
+    "inc07": 0.0,
+    "inc08": 0.0,
+    "inc09": 0.0,
+    "inc10": 0.0,
+    "inc11": 0.0,
+    "inc12": 0.0,
+    "inc13": 0.0,
+    "inc14": 0.0,
+    "inc15": 0.0,
+    "inc16": 0.0,
+    "inc17": 0.0,
+    "income": 0.0,
+    "inc_drug": 0.0,
+    "inc_nondrug": 0.0,
+    "uinc01": 0.0,
+    "uinc02": 0.0,
+    "uinc03": 0.0,
+    "uinc04": 0.0,
+    "uinc05": 0.0,
+    "uinc06": 0.0,
+    "uinc07": 0.0,
+    "uinc08": 0.0,
+    "uinc09": 0.0,
+    "uinc10": 0.0,
+    "uinc11": 0.0,
+    "uinc12": 0.0,
+    "uinc13": 0.0,
+    "uinc14": 70.0,
+    "uinc15": 0.0,
+    "uinc16": 0.0,
+    "uinc17": 0.0,
+    "uincome": 70.0,
+    "uinc_drug": 0.0,
+    "uinc_nondrug": 0.0,
+    "hos_guid": null
+  },
+  {
+    "vn": "250201135641",
+    "hn": "580001270",
+    "vstdate": "1982-02-01",
+    "pttype": "74",
+    "pcode": null,
+    "inc01": 0.0,
+    "inc02": 0.0,
+    "inc03": 0.0,
+    "inc04": 0.0,
+    "inc05": 0.0,
+    "inc06": 0.0,
+    "inc07": 0.0,
+    "inc08": 0.0,
+    "inc09": 0.0,
+    "inc10": 0.0,
+    "inc11": 0.0,
+    "inc12": 0.0,
+    "inc13": 0.0,
+    "inc14": 0.0,
+    "inc15": 0.0,
+    "inc16": 0.0,
+    "inc17": 0.0,
+    "income": 0.0,
+    "inc_drug": 0.0,
+    "inc_nondrug": 0.0,
+    "uinc01": 0.0,
+    "uinc02": 0.0,
+    "uinc03": 0.0,
+    "uinc04": 0.0,
+    "uinc05": 0.0,
+    "uinc06": 0.0,
+    "uinc07": 0.0,
+    "uinc08": 0.0,
+    "uinc09": 0.0,
+    "uinc10": 0.0,
+    "uinc11": 0.0,
+    "uinc12": 0.0,
+    "uinc13": 0.0,
+    "uinc14": 70.0,
+    "uinc15": 0.0,
+    "uinc16": 0.0,
+    "uinc17": 0.0,
+    "uincome": 70.0,
+    "uinc_drug": 0.0,
+    "uinc_nondrug": 0.0,
+    "hos_guid": null
+  },
+  {
+    "vn": "250210100920",
+    "hn": "530217651",
+    "vstdate": "1982-02-10",
+    "pttype": "02",
+    "pcode": null,
+    "inc01": 0.0,
+    "inc02": 0.0,
+    "inc03": 0.0,
+    "inc04": 0.0,
+    "inc05": 0.0,
+    "inc06": 0.0,
+    "inc07": 0.0,
+    "inc08": 0.0,
+    "inc09": 0.0,
+    "inc10": 0.0,
+    "inc11": 0.0,
+    "inc12": 0.0,
+    "inc13": 0.0,
+    "inc14": 0.0,
+    "inc15": 0.0,
+    "inc16": 0.0,
+    "inc17": 0.0,
+    "income": 0.0,
+    "inc_drug": 0.0,
+    "inc_nondrug": 0.0,
+    "uinc01": 0.0,
+    "uinc02": 0.0,
+    "uinc03": 0.0,
+    "uinc04": 0.0,
+    "uinc05": 0.0,
+    "uinc06": 0.0,
+    "uinc07": 0.0,
+    "uinc08": 0.0,
+    "uinc09": 0.0,
+    "uinc10": 0.0,
+    "uinc11": 0.0,
+    "uinc12": 0.0,
+    "uinc13": 0.0,
+    "uinc14": 70.0,
+    "uinc15": 0.0,
+    "uinc16": 0.0,
+    "uinc17": 0.0,
+    "uincome": 70.0,
+    "uinc_drug": 0.0,
+    "uinc_nondrug": 0.0,
+    "hos_guid": null
+  }
+]
+```

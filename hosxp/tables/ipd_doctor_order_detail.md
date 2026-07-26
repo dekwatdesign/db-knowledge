@@ -1,0 +1,597 @@
+# `ipd_doctor_order_detail`
+
+## Columns
+
+| Column | Type | Null | Key | Default | Extra | Comment |
+|---|---|---|---|---|---|---|
+| ipd_doctor_order_detail_id | int(11) | NO | PRI | 0 |  |  |
+| ipd_doctor_order_id | int(11) | YES | MUL | NULL |  |  |
+| ipd_doctor_order_type_id | int(11) | YES |  | NULL |  |  |
+| order_text | text | YES |  | NULL |  |  |
+| is_continue | char(1) | YES |  | NULL |  |  |
+| is_immediate | char(1) | YES |  | NULL |  |  |
+| is_stop | char(1) | YES |  | NULL |  |  |
+| is_med_interval | char(1) | YES |  | NULL |  |  |
+| med_interval_type_id | int(11) | YES |  | NULL |  |  |
+| start_date | date | YES |  | NULL |  |  |
+| start_time | time | YES |  | NULL |  |  |
+| stop_date | date | YES |  | NULL |  |  |
+| stop_time | time | YES |  | NULL |  |  |
+| is_start | char(1) | YES |  | NULL |  |  |
+| off_ipd_doctor_order_detail_id | int(11) | YES | MUL | NULL |  |  |
+| short_order_text | varchar(250) | YES |  | NULL |  |  |
+| is_off | char(1) | YES |  | NULL |  |  |
+| ack_datetime | datetime | YES |  | NULL |  |  |
+| ack_doctor_code | varchar(15) | YES |  | NULL |  |  |
+| interval_list_text | varchar(200) | YES |  | NULL |  |  |
+| hr10 | char(1) | YES |  | NULL |  |  |
+| hr11 | char(1) | YES |  | NULL |  |  |
+| hr12 | char(1) | YES |  | NULL |  |  |
+| hr13 | char(1) | YES |  | NULL |  |  |
+| hr14 | char(1) | YES |  | NULL |  |  |
+| hr15 | char(1) | YES |  | NULL |  |  |
+| hr16 | char(1) | YES |  | NULL |  |  |
+| hr17 | char(1) | YES |  | NULL |  |  |
+| hr18 | char(1) | YES |  | NULL |  |  |
+| hr19 | char(1) | YES |  | NULL |  |  |
+| hr20 | char(1) | YES |  | NULL |  |  |
+| hr21 | char(1) | YES |  | NULL |  |  |
+| hr22 | char(1) | YES |  | NULL |  |  |
+| hr23 | char(1) | YES |  | NULL |  |  |
+| hr24 | char(1) | YES |  | NULL |  |  |
+| hr01 | char(1) | YES |  | NULL |  |  |
+| hr02 | char(1) | YES |  | NULL |  |  |
+| hr03 | char(1) | YES |  | NULL |  |  |
+| hr04 | char(1) | YES |  | NULL |  |  |
+| hr05 | char(1) | YES |  | NULL |  |  |
+| hr06 | char(1) | YES |  | NULL |  |  |
+| hr07 | char(1) | YES |  | NULL |  |  |
+| hr08 | char(1) | YES |  | NULL |  |  |
+| hr09 | char(1) | YES |  | NULL |  |  |
+| hr00 | char(1) | YES |  | NULL |  |  |
+| update_datetime | datetime | YES | MUL | NULL |  |  |
+| staff | varchar(25) | YES |  | NULL |  |  |
+| mini_order_text | varchar(200) | YES |  | NULL |  |  |
+| is_dch_order | char(1) | YES |  | NULL |  |  |
+| ipd_do_schedule_type_id | int(11) | YES |  | NULL |  |  |
+| schedule_text | varchar(200) | YES |  | NULL |  |  |
+| rx_ack | char(1) | YES | MUL | NULL |  |  |
+| rx_ack_datetime | datetime | YES |  | NULL |  |  |
+| approve_text | varchar(250) | YES |  | NULL |  |  |
+| order_detail_approved | char(1) | YES |  | NULL |  |  |
+| order_detail_approved_datetime | datetime | YES |  | NULL |  |  |
+| ipd_doctor_order_batch_ack_id | int(11) | YES | MUL | NULL |  |  |
+| disp_order | int(11) | YES |  | NULL |  |  |
+| ipd_doctor_order_item_type_id | int(11) | YES |  | NULL |  |  |
+| is_apply | char(1) | YES |  | NULL |  |  |
+
+## Indexes
+
+| Index | Column | Unique | Sequence |
+|---|---|---|---|
+| ix_id_ack_datetime | ipd_doctor_order_id | no | 1 |
+| ix_id_ack_datetime | ack_datetime | no | 2 |
+| ix_index2 | ipd_doctor_order_id | no | 1 |
+| ix_index2 | ipd_doctor_order_type_id | no | 2 |
+| ix_index2 | is_continue | no | 3 |
+| ix_index2 | is_off | no | 4 |
+| ix_ipd_batch | ipd_doctor_order_id | no | 1 |
+| ix_ipd_batch | ipd_doctor_order_batch_ack_id | no | 2 |
+| ix_ipd_batch2 | ipd_doctor_order_batch_ack_id | no | 1 |
+| ix_ipd_batch_index | ipd_doctor_order_batch_ack_id | no | 1 |
+| ix_ipd_batch_index | ipd_doctor_order_id | no | 2 |
+| ix_ipd_doctor_order_id | ipd_doctor_order_id | no | 1 |
+| ix_offdetail_id | off_ipd_doctor_order_detail_id | no | 1 |
+| ix_rx | rx_ack | no | 1 |
+| ix_rx | ipd_doctor_order_id | no | 2 |
+| ix_rx_index | ipd_doctor_order_id | no | 1 |
+| ix_rx_index | rx_ack | no | 2 |
+| ix_update_datetime | update_datetime | no | 1 |
+| PRIMARY | ipd_doctor_order_detail_id | yes | 1 |
+
+## Foreign keys
+
+No declared foreign keys.
+
+## Sample rows (8)
+
+```json
+[
+  {
+    "ipd_doctor_order_detail_id": 1,
+    "ipd_doctor_order_id": 1,
+    "ipd_doctor_order_type_id": 1,
+    "order_text": "ABILIFY (Aripiprazole) 15 mg เม็ด \r\nรับประทาน ครั้งละ    1    เม็ด วันละ 1 ครั้ง หลังอาหารเช้า",
+    "is_continue": "N",
+    "is_immediate": null,
+    "is_stop": null,
+    "is_med_interval": null,
+    "med_interval_type_id": null,
+    "start_date": "2023-02-01",
+    "start_time": "14:47:50",
+    "stop_date": null,
+    "stop_time": null,
+    "is_start": null,
+    "off_ipd_doctor_order_detail_id": null,
+    "short_order_text": "ABILIFY (Aripiprazole) 15 mg เม็ด >รับประทาน ครั้งละ    1    เม็ด วันละ 1 ครั้ง หลังอาหารเช้า",
+    "is_off": null,
+    "ack_datetime": null,
+    "ack_doctor_code": null,
+    "interval_list_text": null,
+    "hr10": null,
+    "hr11": null,
+    "hr12": null,
+    "hr13": null,
+    "hr14": null,
+    "hr15": null,
+    "hr16": null,
+    "hr17": null,
+    "hr18": null,
+    "hr19": null,
+    "hr20": null,
+    "hr21": null,
+    "hr22": null,
+    "hr23": null,
+    "hr24": null,
+    "hr01": null,
+    "hr02": null,
+    "hr03": null,
+    "hr04": null,
+    "hr05": null,
+    "hr06": null,
+    "hr07": null,
+    "hr08": null,
+    "hr09": null,
+    "hr00": null,
+    "update_datetime": null,
+    "staff": "[MASKED_FULLNAME]",
+    "mini_order_text": null,
+    "is_dch_order": null,
+    "ipd_do_schedule_type_id": null,
+    "schedule_text": null,
+    "rx_ack": null,
+    "rx_ack_datetime": null,
+    "approve_text": null,
+    "order_detail_approved": "Y",
+    "order_detail_approved_datetime": null,
+    "ipd_doctor_order_batch_ack_id": null,
+    "disp_order": null,
+    "ipd_doctor_order_item_type_id": null,
+    "is_apply": null
+  },
+  {
+    "ipd_doctor_order_detail_id": 13,
+    "ipd_doctor_order_id": 14,
+    "ipd_doctor_order_type_id": 7,
+    "order_text": " ได้จาก : โรงพยาบาลยุวประสาทไวทโยปถัมภ์\r\n  1. LORazepam(แผงสีเหลือง) 1 mg เม็ด #0\r\n    วิธีใช้ : 11ht (1 เม็ด hs)\r\n  2. Methylphenidate(RITALIN) 10 mg เม็ด #0\r\n  3. Nortriptyline  (Ortrip)=ส= 25 mg เม็ด #0\r\n    วิธีใช้ : 21ht (2 เม็ด HS) รับประทาน ครั้งละ 2 เม็ด\r\n  4. Perphenazine (สีส้ม)=ส= 2 mg เม็ด #0\r\n    วิธีใช้ : 12pt ช น(1*2,hs เช้า-ก่อนอน)\r\n",
+    "is_continue": "N",
+    "is_immediate": null,
+    "is_stop": "N",
+    "is_med_interval": null,
+    "med_interval_type_id": null,
+    "start_date": null,
+    "start_time": null,
+    "stop_date": null,
+    "stop_time": null,
+    "is_start": "N",
+    "off_ipd_doctor_order_detail_id": null,
+    "short_order_text": null,
+    "is_off": "N",
+    "ack_datetime": null,
+    "ack_doctor_code": null,
+    "interval_list_text": null,
+    "hr10": null,
+    "hr11": null,
+    "hr12": null,
+    "hr13": null,
+    "hr14": null,
+    "hr15": null,
+    "hr16": null,
+    "hr17": null,
+    "hr18": null,
+    "hr19": null,
+    "hr20": null,
+    "hr21": null,
+    "hr22": null,
+    "hr23": null,
+    "hr24": null,
+    "hr01": null,
+    "hr02": null,
+    "hr03": null,
+    "hr04": null,
+    "hr05": null,
+    "hr06": null,
+    "hr07": null,
+    "hr08": null,
+    "hr09": null,
+    "hr00": null,
+    "update_datetime": "2025-01-09 13:57:06",
+    "staff": "[MASKED_FULLNAME]",
+    "mini_order_text": null,
+    "is_dch_order": null,
+    "ipd_do_schedule_type_id": null,
+    "schedule_text": null,
+    "rx_ack": null,
+    "rx_ack_datetime": null,
+    "approve_text": null,
+    "order_detail_approved": "Y",
+    "order_detail_approved_datetime": null,
+    "ipd_doctor_order_batch_ack_id": null,
+    "disp_order": null,
+    "ipd_doctor_order_item_type_id": null,
+    "is_apply": null
+  },
+  {
+    "ipd_doctor_order_detail_id": 16,
+    "ipd_doctor_order_id": 15,
+    "ipd_doctor_order_type_id": 4,
+    "order_text": "ทดสอบ",
+    "is_continue": "N",
+    "is_immediate": null,
+    "is_stop": null,
+    "is_med_interval": null,
+    "med_interval_type_id": null,
+    "start_date": null,
+    "start_time": null,
+    "stop_date": null,
+    "stop_time": null,
+    "is_start": null,
+    "off_ipd_doctor_order_detail_id": null,
+    "short_order_text": null,
+    "is_off": "N",
+    "ack_datetime": null,
+    "ack_doctor_code": null,
+    "interval_list_text": null,
+    "hr10": null,
+    "hr11": null,
+    "hr12": null,
+    "hr13": null,
+    "hr14": null,
+    "hr15": null,
+    "hr16": null,
+    "hr17": null,
+    "hr18": null,
+    "hr19": null,
+    "hr20": null,
+    "hr21": null,
+    "hr22": null,
+    "hr23": null,
+    "hr24": null,
+    "hr01": null,
+    "hr02": null,
+    "hr03": null,
+    "hr04": null,
+    "hr05": null,
+    "hr06": null,
+    "hr07": null,
+    "hr08": null,
+    "hr09": null,
+    "hr00": null,
+    "update_datetime": "2025-01-09 14:01:10",
+    "staff": "[MASKED_FULLNAME]",
+    "mini_order_text": null,
+    "is_dch_order": null,
+    "ipd_do_schedule_type_id": null,
+    "schedule_text": null,
+    "rx_ack": null,
+    "rx_ack_datetime": null,
+    "approve_text": null,
+    "order_detail_approved": "Y",
+    "order_detail_approved_datetime": "2025-01-09 14:01:10",
+    "ipd_doctor_order_batch_ack_id": null,
+    "disp_order": null,
+    "ipd_doctor_order_item_type_id": 0,
+    "is_apply": null
+  },
+  {
+    "ipd_doctor_order_detail_id": 19,
+    "ipd_doctor_order_id": 16,
+    "ipd_doctor_order_type_id": 2,
+    "order_text": "การฝึกกิจวัตรประจำวันขั้นพื้นฐาน",
+    "is_continue": "Y",
+    "is_immediate": null,
+    "is_stop": null,
+    "is_med_interval": null,
+    "med_interval_type_id": null,
+    "start_date": null,
+    "start_time": null,
+    "stop_date": "2025-01-09",
+    "stop_time": "14:12:34",
+    "is_start": null,
+    "off_ipd_doctor_order_detail_id": null,
+    "short_order_text": null,
+    "is_off": "Y",
+    "ack_datetime": null,
+    "ack_doctor_code": null,
+    "interval_list_text": null,
+    "hr10": null,
+    "hr11": null,
+    "hr12": null,
+    "hr13": null,
+    "hr14": null,
+    "hr15": null,
+    "hr16": null,
+    "hr17": null,
+    "hr18": null,
+    "hr19": null,
+    "hr20": null,
+    "hr21": null,
+    "hr22": null,
+    "hr23": null,
+    "hr24": null,
+    "hr01": null,
+    "hr02": null,
+    "hr03": null,
+    "hr04": null,
+    "hr05": null,
+    "hr06": null,
+    "hr07": null,
+    "hr08": null,
+    "hr09": null,
+    "hr00": null,
+    "update_datetime": "2025-01-09 14:05:41",
+    "staff": "[MASKED_FULLNAME]",
+    "mini_order_text": null,
+    "is_dch_order": null,
+    "ipd_do_schedule_type_id": null,
+    "schedule_text": null,
+    "rx_ack": null,
+    "rx_ack_datetime": null,
+    "approve_text": null,
+    "order_detail_approved": "Y",
+    "order_detail_approved_datetime": "2025-01-09 14:05:41",
+    "ipd_doctor_order_batch_ack_id": null,
+    "disp_order": null,
+    "ipd_doctor_order_item_type_id": null,
+    "is_apply": null
+  },
+  {
+    "ipd_doctor_order_detail_id": 22,
+    "ipd_doctor_order_id": 17,
+    "ipd_doctor_order_type_id": 1,
+    "order_text": "SERTRA (Sertraline) 50 mg เม็ด\r\n 1 เม็ด เวลา 7.00 น. ",
+    "is_continue": "Y",
+    "is_immediate": null,
+    "is_stop": null,
+    "is_med_interval": null,
+    "med_interval_type_id": null,
+    "start_date": "2025-01-09",
+    "start_time": null,
+    "stop_date": null,
+    "stop_time": null,
+    "is_start": null,
+    "off_ipd_doctor_order_detail_id": null,
+    "short_order_text": "SERTRA (Sertraline) 50 mg เม็ด > 1 เม็ด เวลา 7.00 น.",
+    "is_off": "N",
+    "ack_datetime": null,
+    "ack_doctor_code": null,
+    "interval_list_text": null,
+    "hr10": null,
+    "hr11": null,
+    "hr12": null,
+    "hr13": null,
+    "hr14": null,
+    "hr15": null,
+    "hr16": null,
+    "hr17": null,
+    "hr18": null,
+    "hr19": null,
+    "hr20": null,
+    "hr21": null,
+    "hr22": null,
+    "hr23": null,
+    "hr24": null,
+    "hr01": null,
+    "hr02": null,
+    "hr03": null,
+    "hr04": null,
+    "hr05": null,
+    "hr06": null,
+    "hr07": null,
+    "hr08": null,
+    "hr09": null,
+    "hr00": null,
+    "update_datetime": "2025-01-09 14:09:16",
+    "staff": "[MASKED_FULLNAME]",
+    "mini_order_text": null,
+    "is_dch_order": null,
+    "ipd_do_schedule_type_id": null,
+    "schedule_text": null,
+    "rx_ack": null,
+    "rx_ack_datetime": null,
+    "approve_text": null,
+    "order_detail_approved": "Y",
+    "order_detail_approved_datetime": "2025-01-09 14:09:16",
+    "ipd_doctor_order_batch_ack_id": null,
+    "disp_order": 1,
+    "ipd_doctor_order_item_type_id": null,
+    "is_apply": null
+  },
+  {
+    "ipd_doctor_order_detail_id": 25,
+    "ipd_doctor_order_id": 17,
+    "ipd_doctor_order_type_id": 9,
+    "order_text": "การฝึกกิจวัตรประจำวันขั้นพื้นฐาน",
+    "is_continue": "Y",
+    "is_immediate": null,
+    "is_stop": null,
+    "is_med_interval": null,
+    "med_interval_type_id": null,
+    "start_date": null,
+    "start_time": null,
+    "stop_date": "2025-01-09",
+    "stop_time": "14:12:34",
+    "is_start": null,
+    "off_ipd_doctor_order_detail_id": 19,
+    "short_order_text": null,
+    "is_off": null,
+    "ack_datetime": null,
+    "ack_doctor_code": null,
+    "interval_list_text": null,
+    "hr10": null,
+    "hr11": null,
+    "hr12": null,
+    "hr13": null,
+    "hr14": null,
+    "hr15": null,
+    "hr16": null,
+    "hr17": null,
+    "hr18": null,
+    "hr19": null,
+    "hr20": null,
+    "hr21": null,
+    "hr22": null,
+    "hr23": null,
+    "hr24": null,
+    "hr01": null,
+    "hr02": null,
+    "hr03": null,
+    "hr04": null,
+    "hr05": null,
+    "hr06": null,
+    "hr07": null,
+    "hr08": null,
+    "hr09": null,
+    "hr00": null,
+    "update_datetime": null,
+    "staff": null,
+    "mini_order_text": null,
+    "is_dch_order": null,
+    "ipd_do_schedule_type_id": null,
+    "schedule_text": null,
+    "rx_ack": null,
+    "rx_ack_datetime": null,
+    "approve_text": null,
+    "order_detail_approved": "Y",
+    "order_detail_approved_datetime": null,
+    "ipd_doctor_order_batch_ack_id": null,
+    "disp_order": null,
+    "ipd_doctor_order_item_type_id": null,
+    "is_apply": null
+  },
+  {
+    "ipd_doctor_order_detail_id": 30,
+    "ipd_doctor_order_id": 20,
+    "ipd_doctor_order_type_id": 1,
+    "order_text": "Methylphenidate(RITALIN) 10 mg เม็ด\r\n   ",
+    "is_continue": "Y",
+    "is_immediate": null,
+    "is_stop": null,
+    "is_med_interval": null,
+    "med_interval_type_id": null,
+    "start_date": null,
+    "start_time": null,
+    "stop_date": null,
+    "stop_time": null,
+    "is_start": null,
+    "off_ipd_doctor_order_detail_id": null,
+    "short_order_text": "Methylphenidate(RITALIN) 10 mg เม็ด >",
+    "is_off": "N",
+    "ack_datetime": null,
+    "ack_doctor_code": null,
+    "interval_list_text": null,
+    "hr10": null,
+    "hr11": null,
+    "hr12": null,
+    "hr13": null,
+    "hr14": null,
+    "hr15": null,
+    "hr16": null,
+    "hr17": null,
+    "hr18": null,
+    "hr19": null,
+    "hr20": null,
+    "hr21": null,
+    "hr22": null,
+    "hr23": null,
+    "hr24": null,
+    "hr01": null,
+    "hr02": null,
+    "hr03": null,
+    "hr04": null,
+    "hr05": null,
+    "hr06": null,
+    "hr07": null,
+    "hr08": null,
+    "hr09": null,
+    "hr00": null,
+    "update_datetime": "2025-01-09 14:25:11",
+    "staff": "[MASKED_FULLNAME]",
+    "mini_order_text": null,
+    "is_dch_order": null,
+    "ipd_do_schedule_type_id": null,
+    "schedule_text": null,
+    "rx_ack": null,
+    "rx_ack_datetime": null,
+    "approve_text": null,
+    "order_detail_approved": "Y",
+    "order_detail_approved_datetime": "2025-01-09 14:25:11",
+    "ipd_doctor_order_batch_ack_id": null,
+    "disp_order": 1,
+    "ipd_doctor_order_item_type_id": null,
+    "is_apply": null
+  },
+  {
+    "ipd_doctor_order_detail_id": 31,
+    "ipd_doctor_order_id": 20,
+    "ipd_doctor_order_type_id": 1,
+    "order_text": "Perphenazine (สีส้ม)=ส= 2 mg เม็ด\r\nรับประทาน ครั้งละ     1   เม็ด วันละ 2 ครั้ง หลังอาหาร เช้า - ก่อนนอน",
+    "is_continue": "N",
+    "is_immediate": null,
+    "is_stop": null,
+    "is_med_interval": null,
+    "med_interval_type_id": null,
+    "start_date": null,
+    "start_time": null,
+    "stop_date": null,
+    "stop_time": null,
+    "is_start": null,
+    "off_ipd_doctor_order_detail_id": null,
+    "short_order_text": "Perphenazine (สีส้ม)=ส= 2 mg เม็ด >รับประทาน ครั้งละ     1   เม็ด วันละ 2 ครั้ง หลังอาหาร เช้า - ก่อนนอน",
+    "is_off": "N",
+    "ack_datetime": null,
+    "ack_doctor_code": null,
+    "interval_list_text": null,
+    "hr10": null,
+    "hr11": null,
+    "hr12": null,
+    "hr13": null,
+    "hr14": null,
+    "hr15": null,
+    "hr16": null,
+    "hr17": null,
+    "hr18": null,
+    "hr19": null,
+    "hr20": null,
+    "hr21": null,
+    "hr22": null,
+    "hr23": null,
+    "hr24": null,
+    "hr01": null,
+    "hr02": null,
+    "hr03": null,
+    "hr04": null,
+    "hr05": null,
+    "hr06": null,
+    "hr07": null,
+    "hr08": null,
+    "hr09": null,
+    "hr00": null,
+    "update_datetime": "2025-01-09 14:25:45",
+    "staff": "[MASKED_FULLNAME]",
+    "mini_order_text": null,
+    "is_dch_order": null,
+    "ipd_do_schedule_type_id": null,
+    "schedule_text": null,
+    "rx_ack": null,
+    "rx_ack_datetime": null,
+    "approve_text": null,
+    "order_detail_approved": "Y",
+    "order_detail_approved_datetime": "2025-01-09 14:25:45",
+    "ipd_doctor_order_batch_ack_id": null,
+    "disp_order": 1,
+    "ipd_doctor_order_item_type_id": null,
+    "is_apply": null
+  }
+]
+```

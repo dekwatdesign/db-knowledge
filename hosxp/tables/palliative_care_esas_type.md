@@ -1,0 +1,67 @@
+# `palliative_care_esas_type`
+
+## Columns
+
+| Column | Type | Null | Key | Default | Extra | Comment |
+|---|---|---|---|---|---|---|
+| palliative_care_esas_type_id | int(11) | NO | PRI | 0 |  |  |
+| palliative_care_esas_type_name | varchar(255) | YES |  | NULL |  |  |
+| hos_guid | char(38) | YES | MUL | NULL |  |  |
+
+## Indexes
+
+| Index | Column | Unique | Sequence |
+|---|---|---|---|
+| ix_hos_guid | hos_guid | no | 1 |
+| PRIMARY | palliative_care_esas_type_id | yes | 1 |
+
+## Foreign keys
+
+No declared foreign keys.
+
+## Sample rows (8)
+
+```json
+[
+  {
+    "palliative_care_esas_type_id": 1,
+    "palliative_care_esas_type_name": "อาการปวด",
+    "hos_guid": null
+  },
+  {
+    "palliative_care_esas_type_id": 2,
+    "palliative_care_esas_type_name": "อาการอ่อนเพลีย",
+    "hos_guid": null
+  },
+  {
+    "palliative_care_esas_type_id": 3,
+    "palliative_care_esas_type_name": "การคลื่นไส้",
+    "hos_guid": null
+  },
+  {
+    "palliative_care_esas_type_id": 4,
+    "palliative_care_esas_type_name": "อาการซึมเศร้า",
+    "hos_guid": null
+  },
+  {
+    "palliative_care_esas_type_id": 5,
+    "palliative_care_esas_type_name": "อาการวิตกกังวล",
+    "hos_guid": null
+  },
+  {
+    "palliative_care_esas_type_id": 6,
+    "palliative_care_esas_type_name": "อาการง่วงซึม/สะลึมสะลือ",
+    "hos_guid": null
+  },
+  {
+    "palliative_care_esas_type_id": 7,
+    "palliative_care_esas_type_name": "เบื่ออาหาร",
+    "hos_guid": null
+  },
+  {
+    "palliative_care_esas_type_id": 8,
+    "palliative_care_esas_type_name": "อาการทางกายใจ",
+    "hos_guid": null
+  }
+]
+```

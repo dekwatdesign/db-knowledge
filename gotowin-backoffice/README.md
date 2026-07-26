@@ -1,0 +1,425 @@
+# `gtw` — LLM database context
+
+- Generated from read-only MySQL metadata and up to 8 sample rows per table.
+- Samples may contain sensitive data; restrict access before sharing with an external model.
+
+## Files
+
+- [AI context](AI_CONTEXT.md)
+- [Relationships](relationships.md)
+
+- [`asset_article`](tables/asset_article.md) — เน€เธเนเธเธเนเธญเธกเธนเธฅเธเธฃเธธเธ เธฑเธ“เธ‘เนเนเธฃเธเธเธขเธฒเธเธฒเธฅ
+- [`asset_article_test`](tables/asset_article_test.md) — เก็บข้อมูลครุภัณฑ์โรงพยาบาล
+- [`asset_borrow`](tables/asset_borrow.md) — เก็บข้อมูลการยืมทรัพย์สิน
+- [`asset_borrow_detail`](tables/asset_borrow_detail.md) — No comment
+- [`asset_brand`](tables/asset_brand.md) — เก็บข้อมูลยี่ห้อ
+- [`asset_building`](tables/asset_building.md) — สิ่งก่อสร้างขององค์กร
+- [`asset_care`](tables/asset_care.md) — เก็บรายการแต่ะละครั้งที่ตรวจเช็ค
+- [`asset_care_ans_detail`](tables/asset_care_ans_detail.md) — ผลการตรวจเช็ครายละเอียด
+- [`asset_care_calibration`](tables/asset_care_calibration.md) — No comment
+- [`asset_care_calibration_list`](tables/asset_care_calibration_list.md) — No comment
+- [`asset_care_calibration_sub`](tables/asset_care_calibration_sub.md) — No comment
+- [`asset_care_calibration_true`](tables/asset_care_calibration_true.md) — No comment
+- [`asset_care_calibration_true_sub`](tables/asset_care_calibration_true_sub.md) — No comment
+- [`asset_care_check`](tables/asset_care_check.md) — ผลการตรวจเช็ค
+- [`asset_care_detail`](tables/asset_care_detail.md) — เก็บรายละเอียดการตรวจเช็ค
+- [`asset_care_detail_etc`](tables/asset_care_detail_etc.md) — เก็บรายละเอียดการตรวจเช็คอื่นๆ
+- [`asset_care_enginer`](tables/asset_care_enginer.md) — ลักษณะรถ
+- [`asset_care_list`](tables/asset_care_list.md) — วิธีปฏิบัติต่อเครื่องแต่ละเครื่อง
+- [`asset_care_repair`](tables/asset_care_repair.md) — การซ่อมบำรุง
+- [`asset_care_repair_plan`](tables/asset_care_repair_plan.md) — No comment
+- [`asset_care_repair_plan_sub`](tables/asset_care_repair_plan_sub.md) — No comment
+- [`asset_care_repair_service`](tables/asset_care_repair_service.md) — No comment
+- [`asset_care_repair_tech`](tables/asset_care_repair_tech.md) — No comment
+- [`asset_care_setupfunc`](tables/asset_care_setupfunc.md) — No comment
+- [`asset_care_systemtype`](tables/asset_care_systemtype.md) — No comment
+- [`asset_class`](tables/asset_class.md) — รหัสกลุ่มครุภัณฑ์
+- [`asset_color`](tables/asset_color.md) — เก็บข้อมูลสีครุภัณฑ์
+- [`asset_depreciate`](tables/asset_depreciate.md) — No comment
+- [`asset_depreciate_building`](tables/asset_depreciate_building.md) — No comment
+- [`asset_group`](tables/asset_group.md) — กลุ่มครุภัณฑ์
+- [`asset_group_cal`](tables/asset_group_cal.md) — การสอบเทียบมาตรฐาน CAL
+- [`asset_group_pm`](tables/asset_group_pm.md) — ประเภทการบำรุงรักษา PM
+- [`asset_group_risk`](tables/asset_group_risk.md) — ระดับความมเสี่ยงต่อผู้ป่วย
+- [`asset_land`](tables/asset_land.md) — No comment
+- [`asset_pa_calibration`](tables/asset_pa_calibration.md) — ประเภทการสอบเทียบ
+- [`asset_pa_doccheck`](tables/asset_pa_doccheck.md) — No comment
+- [`asset_pa_leader`](tables/asset_pa_leader.md) — คณะกรรมการเครื่องมือแพทย์
+- [`asset_pa_medical_mas`](tables/asset_pa_medical_mas.md) — เครื่องมือทางการแพทย์ที่จำเป็นต้องมีการสอบเทียบ
+- [`asset_pa_tools`](tables/asset_pa_tools.md) — ชื่อเครื่องมือ
+- [`asset_pa_type`](tables/asset_pa_type.md) — ประเภทการสอบเทียบ
+- [`asset_propoties`](tables/asset_propoties.md) — คุณสมบัติ
+- [`asset_request`](tables/asset_request.md) — การขอซื้อขอจ้างส่วนหัว
+- [`asset_request_lend`](tables/asset_request_lend.md) — การขอซื้อขอจ้างส่วนหัว
+- [`asset_request_lend_sub`](tables/asset_request_lend_sub.md) — No comment
+- [`asset_request_sub`](tables/asset_request_sub.md) — No comment
+- [`asset_status`](tables/asset_status.md) — สถานะ
+- [`asset_status_app`](tables/asset_status_app.md) — สถานะ
+- [`asset_type`](tables/asset_type.md) — ประเภท
+- [`asset_type_value`](tables/asset_type_value.md) — ประเภทครุภัณฑ์ตามมูลค่า 
+- [`budget_year`](tables/budget_year.md) — No comment
+- [`checkin_index`](tables/checkin_index.md) — No comment
+- [`checkin_type`](tables/checkin_type.md) — No comment
+- [`gbook_file_server`](tables/gbook_file_server.md) — เก็บข้อมูลไฟล์จัดเก็บ PDF
+- [`gbook_index`](tables/gbook_index.md) — เก็บข้อมูลหนังสือเข้า
+- [`gbook_index_announce`](tables/gbook_index_announce.md) — เก็บข้อมูลหนังสือเข้า
+- [`gbook_index_command`](tables/gbook_index_command.md) — เก็บข้อมูลหนังสือคำสั่ง
+- [`gbook_index_inside`](tables/gbook_index_inside.md) — เก็บข้อมูลหนังสือเข้า
+- [`gbook_index_out`](tables/gbook_index_out.md) — เก็บข้อมูลหนังสือออก
+- [`gbook_index_purchase`](tables/gbook_index_purchase.md) — เก็บข้อมูลหนังสือเข้า
+- [`gbook_index_send_leader`](tables/gbook_index_send_leader.md) — No comment
+- [`gbook_instant`](tables/gbook_instant.md) — ประเภทความเร่งด่วน
+- [`gbook_org_in`](tables/gbook_org_in.md) — เก็บข้อมูลแสดงหน่วยงานที่รับเข้า
+- [`gbook_org_out_list`](tables/gbook_org_out_list.md) — เก็บข้อมูลแสดงหน่วยงานที่รับเข้า
+- [`gbook_secret`](tables/gbook_secret.md) — ประเภทความลัพหนังสือ
+- [`gbook_send`](tables/gbook_send.md) — เก็บข้อมูลการส่งหนังสือเข้ากลุ่มงาน
+- [`gbook_send_announce`](tables/gbook_send_announce.md) — เก็บข้อมูลการส่งหนังสือคำสั่ง
+- [`gbook_send_announce_depart`](tables/gbook_send_announce_depart.md) — เก็บข้อมูลการส่งหนังสือเข้ากลุ่มงาน
+- [`gbook_send_announce_leader`](tables/gbook_send_announce_leader.md) — No comment
+- [`gbook_send_announce_sub`](tables/gbook_send_announce_sub.md) — เก็บข้อมูลการส่งหนังสือเข้ากลุ่มงาน
+- [`gbook_send_announce_sub_sub`](tables/gbook_send_announce_sub_sub.md) — เก็บข้อมูลการส่งหนังสือเข้ากลุ่มงาน
+- [`gbook_send_command`](tables/gbook_send_command.md) — เก็บข้อมูลการส่งหนังสือคำสั่ง
+- [`gbook_send_command_depart`](tables/gbook_send_command_depart.md) — เก็บข้อมูลการส่งหนังสือเข้ากลุ่มงาน
+- [`gbook_send_command_leader`](tables/gbook_send_command_leader.md) — No comment
+- [`gbook_send_command_org`](tables/gbook_send_command_org.md) — เก็บข้อมูลการส่งหนังสือเข้ากลุ่มงาน
+- [`gbook_send_command_sub`](tables/gbook_send_command_sub.md) — เก็บข้อมูลการส่งหนังสือเข้ากลุ่มงาน
+- [`gbook_send_command_sub_sub`](tables/gbook_send_command_sub_sub.md) — เก็บข้อมูลการส่งหนังสือเข้ากลุ่มงาน
+- [`gbook_send_inside`](tables/gbook_send_inside.md) — เก็บข้อมูลการส่งหนังสือคำสั่ง
+- [`gbook_send_inside_depart`](tables/gbook_send_inside_depart.md) — เก็บข้อมูลการส่งหนังสือเข้ากลุ่มงาน
+- [`gbook_send_inside_leader`](tables/gbook_send_inside_leader.md) — No comment
+- [`gbook_send_inside_org`](tables/gbook_send_inside_org.md) — เก็บข้อมูลการส่งหนังสือเข้ากลุ่มงาน
+- [`gbook_send_inside_sub`](tables/gbook_send_inside_sub.md) — เก็บข้อมูลการส่งหนังสือเข้ากลุ่มงาน
+- [`gbook_send_inside_sub_sub`](tables/gbook_send_inside_sub_sub.md) — เก็บข้อมูลการส่งหนังสือเข้ากลุ่มงาน
+- [`gbook_send_person`](tables/gbook_send_person.md) — ส่งต่อหนังสือเข้าบุคคล
+- [`gbook_send_sub`](tables/gbook_send_sub.md) — เก็บข้อมูลการส่งหนังสือเข้ากลุ่มงาน
+- [`gbook_send_sub_sub`](tables/gbook_send_sub_sub.md) — เก็บข้อมูลการส่งหนังสือเข้ากลุ่มงาน
+- [`gbook_send_type`](tables/gbook_send_type.md) — No comment
+- [`gbook_status`](tables/gbook_status.md) — No comment
+- [`gbook_type`](tables/gbook_type.md) — ประเภทหนังสือ
+- [`gbook_type_out`](tables/gbook_type_out.md) — ประเภทหนังสือออก
+- [`gleave_auto_calc_settings`](tables/gleave_auto_calc_settings.md) — No comment
+- [`gleave_day_type`](tables/gleave_day_type.md) — No comment
+- [`gleave_function`](tables/gleave_function.md) — เหตุผลการลา
+- [`gleave_holiday`](tables/gleave_holiday.md) — No comment
+- [`gleave_leader`](tables/gleave_leader.md) — No comment
+- [`gleave_leader_person`](tables/gleave_leader_person.md) — บุคลากรที่หัวหน้ามีสิทธิอนุมัติ \| อนุญาติ
+- [`gleave_leader_status`](tables/gleave_leader_status.md) — หัวหน้าเลือกอนุญาต
+- [`gleave_location`](tables/gleave_location.md) — No comment
+- [`gleave_over`](tables/gleave_over.md) — No comment
+- [`gleave_permis_level`](tables/gleave_permis_level.md) — No comment
+- [`gleave_person_type_rules`](tables/gleave_person_type_rules.md) — No comment
+- [`gleave_reason`](tables/gleave_reason.md) — เหตุผลการลา
+- [`gleave_register`](tables/gleave_register.md) — No comment
+- [`gleave_status`](tables/gleave_status.md) — ผู้อำนวยการเลือกอนุมัติ
+- [`gleave_type`](tables/gleave_type.md) — No comment
+- [`grecord_back`](tables/grecord_back.md) — No comment
+- [`grecord_back_benefit`](tables/grecord_back_benefit.md) — วัตถุประสงค์การเข้าอบรม
+- [`grecord_back_file`](tables/grecord_back_file.md) — No comment
+- [`grecord_back_important`](tables/grecord_back_important.md) — วัตถุประสงค์การเข้าอบรม
+- [`grecord_back_knowledge`](tables/grecord_back_knowledge.md) — วัตถุประสงค์การเข้าอบรม
+- [`grecord_back_money`](tables/grecord_back_money.md) — No comment
+- [`grecord_back_objective`](tables/grecord_back_objective.md) — วัตถุประสงค์การเข้าอบรม
+- [`grecord_back_person`](tables/grecord_back_person.md) — วัตถุประสงค์การเข้าอบรม
+- [`grecord_branch`](tables/grecord_branch.md) — No comment
+- [`grecord_capacity`](tables/grecord_capacity.md) — No comment
+- [`grecord_doctype`](tables/grecord_doctype.md) — No comment
+- [`grecord_go`](tables/grecord_go.md) — No comment
+- [`grecord_index`](tables/grecord_index.md) — No comment
+- [`grecord_index_branch`](tables/grecord_index_branch.md) — No comment
+- [`grecord_index_capacity`](tables/grecord_index_capacity.md) — No comment
+- [`grecord_index_money`](tables/grecord_index_money.md) — No comment
+- [`grecord_index_person`](tables/grecord_index_person.md) — No comment
+- [`grecord_knowledge`](tables/grecord_knowledge.md) — No comment
+- [`grecord_level`](tables/grecord_level.md) — No comment
+- [`grecord_money_set`](tables/grecord_money_set.md) — No comment
+- [`grecord_org`](tables/grecord_org.md) — No comment
+- [`grecord_org_location`](tables/grecord_org_location.md) — No comment
+- [`grecord_status`](tables/grecord_status.md) — No comment
+- [`grecord_type`](tables/grecord_type.md) — No comment
+- [`grecord_vehicle`](tables/grecord_vehicle.md) — No comment
+- [`grecord_withdraw`](tables/grecord_withdraw.md) — No comment
+- [`gsy_permis`](tables/gsy_permis.md) — เก็บสิทธืการเข้าทำงานงานในระบบ HOSOffice ไว้ให้เลือก
+- [`gsy_permis_list`](tables/gsy_permis_list.md) — เก็บสิทธิ์ต่างๆของแต่ละคนว่ามีสิทธิในการเข้าระบบมีอะไรบ้าง
+- [`gsy_permis_menu`](tables/gsy_permis_menu.md) — เก็บสิทธืการเข้าทำงานงานในระบบ HOSOffice ไว้ให้เลือก
+- [`health_body`](tables/health_body.md) — No comment
+- [`health_screen`](tables/health_screen.md) — No comment
+- [`health_screen_confirm`](tables/health_screen_confirm.md) — No comment
+- [`health_screen_lab`](tables/health_screen_lab.md) — No comment
+- [`health_screen_status`](tables/health_screen_status.md) — No comment
+- [`hrd_amphur`](tables/hrd_amphur.md) — อำเภอ
+- [`hrd_bloodgroup`](tables/hrd_bloodgroup.md) — หมู่เลือด
+- [`hrd_citizenship`](tables/hrd_citizenship.md) — เชื้อชาติ
+- [`hrd_department`](tables/hrd_department.md) — กลุ่มงาน
+- [`hrd_department_sub`](tables/hrd_department_sub.md) — หน่วยงาน/ฝ่าย
+- [`hrd_department_sub_sub`](tables/hrd_department_sub_sub.md) — ข้อมูลหน่วยงานซึ่งจะใช้เป็นหน่วยเบิกของงานพัสดุด้วย
+- [`hrd_disciplinary`](tables/hrd_disciplinary.md) — No comment
+- [`hrd_kind`](tables/hrd_kind.md) — ชนิดราชการ
+- [`hrd_kind_type`](tables/hrd_kind_type.md) — ประเภทราชการ
+- [`hrd_level`](tables/hrd_level.md) — ระดับข้าราชการ ปฏิบัติการ ชำนาญ..
+- [`hrd_marry_status`](tables/hrd_marry_status.md) — สถานะการสมรส
+- [`hrd_nationality`](tables/hrd_nationality.md) — สัญชาติ
+- [`hrd_person`](tables/hrd_person.md) — ข้อมูลบุคลากร
+- [`hrd_person_type`](tables/hrd_person_type.md) — ประเภทบุคลากร ลูกจ้าง ข้าราชการ
+- [`hrd_person_type_history`](tables/hrd_person_type_history.md) — No comment
+- [`hrd_position`](tables/hrd_position.md) — เก็บข้อมูลตำแหน่งบุคลากร
+- [`hrd_position_type`](tables/hrd_position_type.md) — ประเภทบุคลากรสำนักปลัด
+- [`hrd_prefix`](tables/hrd_prefix.md) — เก็บข้อมูลคำนำหน้าชื่อ
+- [`hrd_province`](tables/hrd_province.md) — จังหวัด
+- [`hrd_religion`](tables/hrd_religion.md) — ศาสนา
+- [`hrd_sex`](tables/hrd_sex.md) — เพศ
+- [`hrd_status`](tables/hrd_status.md) — สถานะการทำงาน
+- [`hrd_team`](tables/hrd_team.md) — ทีมนำ
+- [`hrd_team_list`](tables/hrd_team_list.md) — บุคลากรในทีมนำ
+- [`hrd_team_position`](tables/hrd_team_position.md) — ตำแหน่งในทีมนำ
+- [`hrd_tr_changename`](tables/hrd_tr_changename.md) — ประวัติการเปลี่ยนชื่อ
+- [`hrd_tr_cid_card`](tables/hrd_tr_cid_card.md) — ใบประกอบวิชาชีพ
+- [`hrd_tr_edu`](tables/hrd_tr_edu.md) — ประวัติการศึกษา
+- [`hrd_tr_expert`](tables/hrd_tr_expert.md) — ประวัติความเชี่ยวชาญ
+- [`hrd_tr_family`](tables/hrd_tr_family.md) — สมาชิกในครอบครัว
+- [`hrd_tr_file`](tables/hrd_tr_file.md) — No comment
+- [`hrd_tr_occu_card`](tables/hrd_tr_occu_card.md) — ใบประกอบวิชาชีพ
+- [`hrd_tr_official_card`](tables/hrd_tr_official_card.md) — ใบประกอบวิชาชีพ
+- [`hrd_tr_reward`](tables/hrd_tr_reward.md) — ประวัติการได้รับรางวัล
+- [`hrd_tr_salary`](tables/hrd_tr_salary.md) — ประวัติการปรับเงินเดือน
+- [`hrd_tr_signature`](tables/hrd_tr_signature.md) — No comment
+- [`hrd_tr_train_spacial`](tables/hrd_tr_train_spacial.md) — ประวัติการอบรม ความสามารถพิเศษ
+- [`hrd_tr_work`](tables/hrd_tr_work.md) — ประวัติการทำงาน
+- [`hrd_tumbon`](tables/hrd_tumbon.md) — ตำบล
+- [`hrd_vut`](tables/hrd_vut.md) — วุฒิการศึกษาไว้เลือก
+- [`info_org`](tables/info_org.md) — No comment
+- [`info_publicity_image`](tables/info_publicity_image.md) — No comment
+- [`infomrepair_function`](tables/infomrepair_function.md) — No comment
+- [`infomrepair_functioncom`](tables/infomrepair_functioncom.md) — No comment
+- [`infomrepair_functionmedical`](tables/infomrepair_functionmedical.md) — No comment
+- [`infomrepair_functionnormal`](tables/infomrepair_functionnormal.md) — No comment
+- [`information_facebook_page`](tables/information_facebook_page.md) — No comment
+- [`information_publicize`](tables/information_publicize.md) — No comment
+- [`informcom_brand`](tables/informcom_brand.md) — No comment
+- [`informcom_color`](tables/informcom_color.md) — No comment
+- [`informcom_engineer`](tables/informcom_engineer.md) — ลักษณะรถ
+- [`informcom_hardware`](tables/informcom_hardware.md) — No comment
+- [`informcom_location`](tables/informcom_location.md) — เก็บข้อมูลสถานที่จัดเก็บ
+- [`informcom_org`](tables/informcom_org.md) — ข้อมูลองค์กรระบบคอมพิวเตอร์
+- [`informcom_plan`](tables/informcom_plan.md) — No comment
+- [`informcom_plan_sub`](tables/informcom_plan_sub.md) — No comment
+- [`informcom_priority`](tables/informcom_priority.md) — ความเร่งด่วนความสำคัญ
+- [`informcom_program`](tables/informcom_program.md) — ข้อมูลโปรแกรมที่ติดตั้งในคอมพิวเตอร์
+- [`informcom_repair`](tables/informcom_repair.md) — No comment
+- [`informcom_repair_engineer`](tables/informcom_repair_engineer.md) — No comment
+- [`informcom_repair_list`](tables/informcom_repair_list.md) — รายการซ่อมที่ช่างตั้งไว้เลือกตอนซ่อม
+- [`informcom_service`](tables/informcom_service.md) — No comment
+- [`informcom_service_list`](tables/informcom_service_list.md) — บริการอื่นๆระบบซ่อมคอม
+- [`informcom_setupfunc`](tables/informcom_setupfunc.md) — No comment
+- [`informcom_size`](tables/informcom_size.md) — ขนาด
+- [`informcom_status`](tables/informcom_status.md) — สถานะคอมพิวเตอร์
+- [`informcom_supplier_repair`](tables/informcom_supplier_repair.md) — ข้อมูลการซ่อมภายนอก
+- [`informcom_systemtype`](tables/informcom_systemtype.md) — No comment
+- [`informcom_type`](tables/informcom_type.md) — ประเภทคอมพิวเตอร์
+- [`informrepair_index`](tables/informrepair_index.md) — ยี่ห้อยานพาหนะ
+- [`informrepair_index_tech`](tables/informrepair_index_tech.md) — No comment
+- [`informrepair_openform`](tables/informrepair_openform.md) — No comment
+- [`informrepair_other`](tables/informrepair_other.md) — No comment
+- [`informrepair_plan`](tables/informrepair_plan.md) — No comment
+- [`informrepair_plan_sub`](tables/informrepair_plan_sub.md) — No comment
+- [`informrepair_priority`](tables/informrepair_priority.md) — No comment
+- [`informrepair_service`](tables/informrepair_service.md) — No comment
+- [`informrepair_service_type`](tables/informrepair_service_type.md) — No comment
+- [`informrepair_setupfunc`](tables/informrepair_setupfunc.md) — No comment
+- [`informrepair_status`](tables/informrepair_status.md) — No comment
+- [`informrepair_systemtype`](tables/informrepair_systemtype.md) — No comment
+- [`informrepair_tech`](tables/informrepair_tech.md) — ลักษณะรถ
+- [`informrepair_type`](tables/informrepair_type.md) — ประเภทการซ่อม
+- [`informrepair_year`](tables/informrepair_year.md) — No comment
+- [`infowork_capacity`](tables/infowork_capacity.md) — No comment
+- [`infowork_cor_com`](tables/infowork_cor_com.md) — No comment
+- [`infowork_cor_com_level`](tables/infowork_cor_com_level.md) — No comment
+- [`infowork_cor_com_level_sub`](tables/infowork_cor_com_level_sub.md) — No comment
+- [`infowork_cor_com_setup`](tables/infowork_cor_com_setup.md) — No comment
+- [`infowork_cor_result`](tables/infowork_cor_result.md) — No comment
+- [`infowork_cor_result_copy1`](tables/infowork_cor_result_copy1.md) — No comment
+- [`infowork_cor_result_sub`](tables/infowork_cor_result_sub.md) — No comment
+- [`infowork_fun_result`](tables/infowork_fun_result.md) — No comment
+- [`infowork_fun_result_sub`](tables/infowork_fun_result_sub.md) — No comment
+- [`infowork_function_level`](tables/infowork_function_level.md) — No comment
+- [`infowork_function_level_sub`](tables/infowork_function_level_sub.md) — No comment
+- [`infowork_function_setup`](tables/infowork_function_setup.md) — No comment
+- [`infowork_funtion`](tables/infowork_funtion.md) — No comment
+- [`infowork_funtion_position`](tables/infowork_funtion_position.md) — No comment
+- [`infowork_job_descriptions`](tables/infowork_job_descriptions.md) — No comment
+- [`infowork_job_descriptions_set`](tables/infowork_job_descriptions_set.md) — No comment
+- [`infowork_job_dis`](tables/infowork_job_dis.md) — No comment
+- [`infowork_job_dis_position`](tables/infowork_job_dis_position.md) — No comment
+- [`infowork_job_person`](tables/infowork_job_person.md) — No comment
+- [`infowork_job_person_list`](tables/infowork_job_person_list.md) — No comment
+- [`infowork_job_person_permission`](tables/infowork_job_person_permission.md) — No comment
+- [`infowork_job_person_permission_list`](tables/infowork_job_person_permission_list.md) — No comment
+- [`infowork_job_person_status`](tables/infowork_job_person_status.md) — No comment
+- [`infowork_kpi`](tables/infowork_kpi.md) — No comment
+- [`infowork_kpis`](tables/infowork_kpis.md) — No comment
+- [`infowork_kpis_person`](tables/infowork_kpis_person.md) — No comment
+- [`infowork_kpis_person_level`](tables/infowork_kpis_person_level.md) — No comment
+- [`infowork_kpis_person_sub`](tables/infowork_kpis_person_sub.md) — No comment
+- [`infowork_type_score`](tables/infowork_type_score.md) — No comment
+- [`infowork_type_score_sub`](tables/infowork_type_score_sub.md) — No comment
+- [`leave_month`](tables/leave_month.md) — No comment
+- [`line_token`](tables/line_token.md) — No comment
+- [`medical_setup`](tables/medical_setup.md) — No comment
+- [`meetingroom_article`](tables/meetingroom_article.md) — อุปกรณ์ที่ต้องการใช้ในห้องประชุม ไว้ให้เลือก
+- [`meetingroom_article_list`](tables/meetingroom_article_list.md) — เก็บรายการการเลือกอุปกรณ์ที่ต้องการขอใช้
+- [`meetingroom_budget`](tables/meetingroom_budget.md) — No comment
+- [`meetingroom_equipment`](tables/meetingroom_equipment.md) — No comment
+- [`meetingroom_food`](tables/meetingroom_food.md) — No comment
+- [`meetingroom_food_list`](tables/meetingroom_food_list.md) — No comment
+- [`meetingroom_food_time`](tables/meetingroom_food_time.md) — No comment
+- [`meetingroom_food_type`](tables/meetingroom_food_type.md) — No comment
+- [`meetingroom_index`](tables/meetingroom_index.md) — No comment
+- [`meetingroom_objective`](tables/meetingroom_objective.md) — No comment
+- [`meetingroom_service`](tables/meetingroom_service.md) — No comment
+- [`meetingroom_service_status`](tables/meetingroom_service_status.md) — No comment
+- [`meetingroom_stylerooms`](tables/meetingroom_stylerooms.md) — No comment
+- [`meetingroom_time`](tables/meetingroom_time.md) — ช่วยเวลาการใช้ห้อประชุม
+- [`meetting_inside_index`](tables/meetting_inside_index.md) — No comment
+- [`meetting_inside_performancesub`](tables/meetting_inside_performancesub.md) — No comment
+- [`meetting_inside_professionsub`](tables/meetting_inside_professionsub.md) — No comment
+- [`meetting_inside_type`](tables/meetting_inside_type.md) — No comment
+- [`meetting_inside_useroutsub`](tables/meetting_inside_useroutsub.md) — No comment
+- [`meetting_inside_usersub`](tables/meetting_inside_usersub.md) — No comment
+- [`migrations`](tables/migrations.md) — No comment
+- [`openform_car`](tables/openform_car.md) — No comment
+- [`openformperdev`](tables/openformperdev.md) — No comment
+- [`operate_activity`](tables/operate_activity.md) — No comment
+- [`operate_color`](tables/operate_color.md) — No comment
+- [`operate_index`](tables/operate_index.md) — No comment
+- [`operate_job`](tables/operate_job.md) — No comment
+- [`operate_member`](tables/operate_member.md) — No comment
+- [`operate_status`](tables/operate_status.md) — No comment
+- [`operate_swap`](tables/operate_swap.md) — No comment
+- [`operate_trade`](tables/operate_trade.md) — No comment
+- [`operate_type`](tables/operate_type.md) — No comment
+- [`ot_index`](tables/ot_index.md) — No comment
+- [`ot_index_sub`](tables/ot_index_sub.md) — No comment
+- [`password_resets`](tables/password_resets.md) — No comment
+- [`phinxlog`](tables/phinxlog.md) — No comment
+- [`plan_supplies_year`](tables/plan_supplies_year.md) — No comment
+- [`risk_status`](tables/risk_status.md) — No comment
+- [`safe_event`](tables/safe_event.md) — No comment
+- [`safe_location`](tables/safe_location.md) — No comment
+- [`safe_service`](tables/safe_service.md) — No comment
+- [`safe_type`](tables/safe_type.md) — No comment
+- [`salary_all`](tables/salary_all.md) — No comment
+- [`salary_all_head`](tables/salary_all_head.md) — No comment
+- [`salary_all_pay`](tables/salary_all_pay.md) — No comment
+- [`salary_all_receive`](tables/salary_all_receive.md) — No comment
+- [`salary_borrow`](tables/salary_borrow.md) — No comment
+- [`salary_borrow_status`](tables/salary_borrow_status.md) — No comment
+- [`salary_borrow_sub`](tables/salary_borrow_sub.md) — No comment
+- [`salary_certificate`](tables/salary_certificate.md) — No comment
+- [`salary_certificate_sub`](tables/salary_certificate_sub.md) — No comment
+- [`salary_pay`](tables/salary_pay.md) — No comment
+- [`salary_pay_person`](tables/salary_pay_person.md) — No comment
+- [`salary_receive`](tables/salary_receive.md) — No comment
+- [`salary_receive_person`](tables/salary_receive_person.md) — No comment
+- [`salary_slip`](tables/salary_slip.md) — No comment
+- [`salary_staff`](tables/salary_staff.md) — No comment
+- [`salary_status`](tables/salary_status.md) — No comment
+- [`supplies`](tables/supplies.md) — ข้อมูลพัสดุหลักทั้งหมดเป็นตัวต้นหลัก
+- [`supplies_aspect`](tables/supplies_aspect.md) — เกณฑ์การคัดเลือก
+- [`supplies_brand`](tables/supplies_brand.md) — เก็บข้อมูลยี่ห้อ
+- [`supplies_budget`](tables/supplies_budget.md) — งบประมาณที่ใช้
+- [`supplies_buy`](tables/supplies_buy.md) — ประเภทการซื้อจ้าง
+- [`supplies_class`](tables/supplies_class.md) — รหัสกลุ่มครุภัณฑ์
+- [`supplies_color`](tables/supplies_color.md) — เก็บข้อมูลสีครุภัณฑ์
+- [`supplies_con`](tables/supplies_con.md) — ทะเบียนคุมพัสดุ
+- [`supplies_con_board`](tables/supplies_con_board.md) — คณะกรรมการในทะเบียนคุม
+- [`supplies_con_board_list`](tables/supplies_con_board_list.md) — No comment
+- [`supplies_con_board_list_person`](tables/supplies_con_board_list_person.md) — คณะกรรมการเริ่มต้นแต่ละคณะ
+- [`supplies_con_list`](tables/supplies_con_list.md) — รายการขอซื้อขอจ้าง
+- [`supplies_con_premise`](tables/supplies_con_premise.md) — เอกสารหลักฐานการรับสินค้า
+- [`supplies_con_quotation`](tables/supplies_con_quotation.md) — No comment
+- [`supplies_con_type_list`](tables/supplies_con_type_list.md) — ประเภทรายการรับ
+- [`supplies_condision`](tables/supplies_condision.md) — เงื่อนไขการซื้อจ้าง
+- [`supplies_continue`](tables/supplies_continue.md) — No comment
+- [`supplies_decline`](tables/supplies_decline.md) — อัตราค่าเสื่อมราคา
+- [`supplies_expire_type`](tables/supplies_expire_type.md) — ประเภทการจำหน่าย
+- [`supplies_group`](tables/supplies_group.md) — กลุ่มครุภัณฑ์
+- [`supplies_inven`](tables/supplies_inven.md) — No comment
+- [`supplies_inven_permiss`](tables/supplies_inven_permiss.md) — No comment
+- [`supplies_location`](tables/supplies_location.md) — สถานที่จัดเก็บ
+- [`supplies_location_level`](tables/supplies_location_level.md) — ชันไหนของตึก
+- [`supplies_location_level_room`](tables/supplies_location_level_room.md) — ห้องไหนของชั้น
+- [`supplies_material_plan_value`](tables/supplies_material_plan_value.md) — No comment
+- [`supplies_method`](tables/supplies_method.md) — วิธีการจัดหา
+- [`supplies_model`](tables/supplies_model.md) — ข้อมูลรุ่นของครุภัณฑ์
+- [`supplies_money_group`](tables/supplies_money_group.md) — หมวดการใช้เงิน
+- [`supplies_month`](tables/supplies_month.md) — No comment
+- [`supplies_officer`](tables/supplies_officer.md) — No comment
+- [`supplies_order`](tables/supplies_order.md) — No comment
+- [`supplies_order_type`](tables/supplies_order_type.md) — No comment
+- [`supplies_position`](tables/supplies_position.md) — ตำแหน่ง
+- [`supplies_price_ref`](tables/supplies_price_ref.md) — No comment
+- [`supplies_prop`](tables/supplies_prop.md) — คุณสมบัติ
+- [`supplies_purchase`](tables/supplies_purchase.md) — No comment
+- [`supplies_request`](tables/supplies_request.md) — การขอซื้อขอจ้างส่วนหัว
+- [`supplies_request_status`](tables/supplies_request_status.md) — ผู้อำนวยการเลือกอนุมัติ
+- [`supplies_request_sub`](tables/supplies_request_sub.md) — No comment
+- [`supplies_send_money_item`](tables/supplies_send_money_item.md) — รายการที่จะนำส่งการเงิน
+- [`supplies_size`](tables/supplies_size.md) — ขนาด
+- [`supplies_soldout`](tables/supplies_soldout.md) — No comment
+- [`supplies_status_regis`](tables/supplies_status_regis.md) — สถานะทะเบียนคุม
+- [`supplies_trimart`](tables/supplies_trimart.md) — No comment
+- [`supplies_type`](tables/supplies_type.md) — ประเภทพัสดุ
+- [`supplies_type_kind`](tables/supplies_type_kind.md) — เก็บข้อมูลประเภทต่างๆของพัสดุ ฟิกที่ดิน สิ่งปลูกสร้าง วัสดุ ครุภัณฑ์ ..
+- [`supplies_type_list`](tables/supplies_type_list.md) — ประเภทรายการรับ
+- [`supplies_type_master`](tables/supplies_type_master.md) — ประเภทพัสดุ ไว้เพื่อการจัดกลุ่ม
+- [`supplies_type_sub`](tables/supplies_type_sub.md) — ประเภทย่อยวัสดุ
+- [`supplies_types`](tables/supplies_types.md) — ประเภท
+- [`supplies_unit`](tables/supplies_unit.md) — No comment
+- [`supplies_unit_ref`](tables/supplies_unit_ref.md) — รายการหน่วยนับของสินค้าซึ่งมีมากกว่า 1 รายการ
+- [`supplies_vendor`](tables/supplies_vendor.md) — No comment
+- [`supply_order`](tables/supply_order.md) — รายการขอเบิก
+- [`supply_order_detail`](tables/supply_order_detail.md) — No comment
+- [`supply_order_status`](tables/supply_order_status.md) — No comment
+- [`users`](tables/users.md) — No comment
+- [`vehicle_car_accessory`](tables/vehicle_car_accessory.md) — รายการอุปกรณ์เสริมในรถในไว้ให้เลือก
+- [`vehicle_car_accessory_asset`](tables/vehicle_car_accessory_asset.md) — อุปกรณ์ที่ติดตั้งภายใน เลือกจากทะเบียนพัสดุ 
+- [`vehicle_car_accessory_detail`](tables/vehicle_car_accessory_detail.md) — อุปกรณ์ที่ติดตั้งภายในเพิ่มเติมไม่มีทะเบียนพัสดุ ขอรถแต่ละคัน
+- [`vehicle_car_act_detail`](tables/vehicle_car_act_detail.md) — รายการอุปกรณ์เสริมในรถในไว้ให้เลือก
+- [`vehicle_car_appoint_locate`](tables/vehicle_car_appoint_locate.md) — ประเภทรถ
+- [`vehicle_car_brand`](tables/vehicle_car_brand.md) — ยี่ห้อยานพาหนะ
+- [`vehicle_car_check_detail`](tables/vehicle_car_check_detail.md) — รายการอุปกรณ์เสริมในรถในไว้ให้เลือก
+- [`vehicle_car_check_detail_sub`](tables/vehicle_car_check_detail_sub.md) — รายการอุปกรณ์เสริมในรถในไว้ให้เลือก
+- [`vehicle_car_driver`](tables/vehicle_car_driver.md) — ลักษณะรถ
+- [`vehicle_car_equipment`](tables/vehicle_car_equipment.md) — No comment
+- [`vehicle_car_fanciness`](tables/vehicle_car_fanciness.md) — No comment
+- [`vehicle_car_function`](tables/vehicle_car_function.md) — No comment
+- [`vehicle_car_functioncheck`](tables/vehicle_car_functioncheck.md) — No comment
+- [`vehicle_car_index`](tables/vehicle_car_index.md) — ข้อมูลยานพาหนะ
+- [`vehicle_car_index_etc`](tables/vehicle_car_index_etc.md) — บุคคลอื่นที่ร่วมเดินทางไปด้วย
+- [`vehicle_car_index_person`](tables/vehicle_car_index_person.md) — บุคลากรที่ร่วมเดินทาง
+- [`vehicle_car_index_regroup`](tables/vehicle_car_index_regroup.md) — บุคคลอื่นที่ร่วมเดินทางไปด้วย
+- [`vehicle_car_index_work`](tables/vehicle_car_index_work.md) — No comment
+- [`vehicle_car_insu_detail`](tables/vehicle_car_insu_detail.md) — รายการอุปกรณ์เสริมในรถในไว้ให้เลือก
+- [`vehicle_car_mechin_brand`](tables/vehicle_car_mechin_brand.md) — ยี่ห้อยานพาหนะ
+- [`vehicle_car_position`](tables/vehicle_car_position.md) — No comment
+- [`vehicle_car_power`](tables/vehicle_car_power.md) — ข้อมูลน้ำมันเชื้อเพลิง
+- [`vehicle_car_priority`](tables/vehicle_car_priority.md) — ความเร่งด่วน
+- [`vehicle_car_refer`](tables/vehicle_car_refer.md) — ยี่ห้อยานพาหนะ
+- [`vehicle_car_refer_equipment`](tables/vehicle_car_refer_equipment.md) — No comment
+- [`vehicle_car_refer_nurse`](tables/vehicle_car_refer_nurse.md) — พยาบาลที่รีฟอไปด้วย
+- [`vehicle_car_refer_type`](tables/vehicle_car_refer_type.md) — ลักษณะรถ
+- [`vehicle_car_refer_work`](tables/vehicle_car_refer_work.md) — No comment
+- [`vehicle_car_request_status`](tables/vehicle_car_request_status.md) — No comment
+- [`vehicle_car_reserve`](tables/vehicle_car_reserve.md) — การขอใช้รถ
+- [`vehicle_car_reserve_copy1`](tables/vehicle_car_reserve_copy1.md) — การขอใช้รถ
+- [`vehicle_car_status`](tables/vehicle_car_status.md) — สถานะการใช้งานรถ
+- [`vehicle_car_style`](tables/vehicle_car_style.md) — ลักษณะรถ
+- [`vehicle_car_tax_detail`](tables/vehicle_car_tax_detail.md) — รายการอุปกรณ์เสริมในรถในไว้ให้เลือก
+- [`vehicle_car_type`](tables/vehicle_car_type.md) — ประเภทรถ
+- [`vehicle_car_upload`](tables/vehicle_car_upload.md) — No comment
+- [`warehouse_request`](tables/warehouse_request.md) — No comment
+- [`warehouse_request_status`](tables/warehouse_request_status.md) — No comment
+- [`warehouse_request_sub`](tables/warehouse_request_sub.md) — No comment
+- [`warehouse_treasury_export_sub`](tables/warehouse_treasury_export_sub.md) — No comment
+- [`web_meta_data`](tables/web_meta_data.md) — No comment
+- [`youtube_upload`](tables/youtube_upload.md) — No comment
+- [`zapuser`](tables/zapuser.md) — No comment

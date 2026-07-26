@@ -1,0 +1,77 @@
+# `health_med_educational`
+
+## Columns
+
+| Column | Type | Null | Key | Default | Extra | Comment |
+|---|---|---|---|---|---|---|
+| health_med_educational_id | int(11) | NO | PRI | 0 |  |  |
+| health_med_educational_name | varchar(250) | YES | UNI | NULL |  |  |
+| health_med_educational_code | varchar(50) | YES |  | NULL |  |  |
+| hos_guid | varchar(38) | YES | MUL | NULL |  |  |
+
+## Indexes
+
+| Index | Column | Unique | Sequence |
+|---|---|---|---|
+| ix_health_med_educational_name | health_med_educational_name | yes | 1 |
+| ix_hos_guid | hos_guid | no | 1 |
+| PRIMARY | health_med_educational_id | yes | 1 |
+
+## Foreign keys
+
+No declared foreign keys.
+
+## Sample rows (8)
+
+```json
+[
+  {
+    "health_med_educational_id": 1,
+    "health_med_educational_name": "แพทย์แผนไทยบัณฑิต",
+    "health_med_educational_code": "01",
+    "hos_guid": null
+  },
+  {
+    "health_med_educational_id": 2,
+    "health_med_educational_name": "แพทย์แผนไทยประยุกต์บัณทิต",
+    "health_med_educational_code": "02",
+    "hos_guid": null
+  },
+  {
+    "health_med_educational_id": 3,
+    "health_med_educational_name": "ประกาศนียบัตรวิชาชีพชั้นสูงการแพทย์แผนไทย",
+    "health_med_educational_code": "03",
+    "hos_guid": null
+  },
+  {
+    "health_med_educational_id": 4,
+    "health_med_educational_name": "ประกาศนียบัตรวิชาชีพชั้นสูงการแพทย์แผนไทยประยุกต์",
+    "health_med_educational_code": "04",
+    "hos_guid": null
+  },
+  {
+    "health_med_educational_id": 5,
+    "health_med_educational_name": "สาธารณสุขศาสตรบัณฑิต(แพทย์แผนไทย)",
+    "health_med_educational_code": "05",
+    "hos_guid": null
+  },
+  {
+    "health_med_educational_id": 6,
+    "health_med_educational_name": "วิทยาศาสตร์บัณทิต(การแพทย์แผนไทยประยุกต์)",
+    "health_med_educational_code": "06",
+    "hos_guid": null
+  },
+  {
+    "health_med_educational_id": 7,
+    "health_med_educational_name": "ประกาศนียบัตรวิชาชีพชั้นสูงสาขาวิชาวิทยาศาสตร์สุขภาพ(การแพทย์แผนไทยประยุกต์)",
+    "health_med_educational_code": "07",
+    "hos_guid": null
+  },
+  {
+    "health_med_educational_id": 8,
+    "health_med_educational_name": "ประกาศนียบัตรหลักสูตรการแพทย์แผนไทย สาขาเวชกรรมแผนไทย",
+    "health_med_educational_code": "08",
+    "hos_guid": null
+  }
+]
+```

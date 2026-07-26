@@ -1,0 +1,467 @@
+# `inc_ipd_stat`
+
+## Columns
+
+| Column | Type | Null | Key | Default | Extra | Comment |
+|---|---|---|---|---|---|---|
+| an | varchar(9) | NO | PRI |  |  |  |
+| hn | varchar(9) | YES | MUL | NULL |  |  |
+| dchdate | date | YES | MUL | NULL |  |  |
+| pttype | char(2) | YES | MUL | NULL |  |  |
+| pcode | char(2) | YES |  | NULL |  |  |
+| inc01 | double(15,3) | YES |  | NULL |  |  |
+| inc02 | double(15,3) | YES |  | NULL |  |  |
+| inc03 | double(15,3) | YES |  | NULL |  |  |
+| inc04 | double(15,3) | YES |  | NULL |  |  |
+| inc05 | double(15,3) | YES |  | NULL |  |  |
+| inc06 | double(15,3) | YES |  | NULL |  |  |
+| inc07 | double(15,3) | YES |  | NULL |  |  |
+| inc08 | double(15,3) | YES |  | NULL |  |  |
+| inc09 | double(15,3) | YES |  | NULL |  |  |
+| inc10 | double(15,3) | YES |  | NULL |  |  |
+| inc11 | double(15,3) | YES |  | NULL |  |  |
+| inc12 | double(15,3) | YES |  | NULL |  |  |
+| inc13 | double(15,3) | YES |  | NULL |  |  |
+| inc14 | double(15,3) | YES |  | NULL |  |  |
+| inc15 | double(15,3) | YES |  | NULL |  |  |
+| inc16 | double(15,3) | YES |  | NULL |  |  |
+| inc17 | double(15,3) | YES |  | NULL |  |  |
+| income | double(15,3) | YES |  | NULL |  |  |
+| inc_drug | double(15,3) | YES |  | NULL |  |  |
+| inc_nondrug | double(15,3) | YES |  | NULL |  |  |
+| uinc01 | double(15,3) | YES |  | NULL |  |  |
+| uinc02 | double(15,3) | YES |  | NULL |  |  |
+| uinc03 | double(15,3) | YES |  | NULL |  |  |
+| uinc04 | double(15,3) | YES |  | NULL |  |  |
+| uinc05 | double(15,3) | YES |  | NULL |  |  |
+| uinc06 | double(15,3) | YES |  | NULL |  |  |
+| uinc07 | double(15,3) | YES |  | NULL |  |  |
+| uinc08 | double(15,3) | YES |  | NULL |  |  |
+| uinc09 | double(15,3) | YES |  | NULL |  |  |
+| uinc10 | double(15,3) | YES |  | NULL |  |  |
+| uinc11 | double(15,3) | YES |  | NULL |  |  |
+| uinc12 | double(15,3) | YES |  | NULL |  |  |
+| uinc13 | double(15,3) | YES |  | NULL |  |  |
+| uinc14 | double(15,3) | YES |  | NULL |  |  |
+| uinc15 | double(15,3) | YES |  | NULL |  |  |
+| uinc16 | double(15,3) | YES |  | NULL |  |  |
+| uinc17 | double(15,3) | YES |  | NULL |  |  |
+| uincome | double(15,3) | YES |  | NULL |  |  |
+| uinc_drug | double(15,3) | YES |  | NULL |  |  |
+| uinc_nondrug | double(15,3) | YES |  | NULL |  |  |
+| hos_guid | char(38) | YES | MUL | NULL |  |  |
+| hos_guid_ext | varchar(64) | YES | MUL | NULL |  |  |
+
+## Indexes
+
+| Index | Column | Unique | Sequence |
+|---|---|---|---|
+| billdate | dchdate | no | 1 |
+| hn | hn | no | 1 |
+| ix_hos_guid | hos_guid | no | 1 |
+| ix_hos_guid_ext | hos_guid_ext | no | 1 |
+| PRIMARY | an | yes | 1 |
+| pttype | pttype | no | 1 |
+
+## Foreign keys
+
+No declared foreign keys.
+
+## Sample rows (8)
+
+```json
+[
+  {
+    "an": "540000786",
+    "hn": "530146153",
+    "dchdate": "2011-10-21",
+    "pttype": "74",
+    "pcode": null,
+    "inc01": 0.0,
+    "inc02": 0.0,
+    "inc03": 0.0,
+    "inc04": 0.0,
+    "inc05": 0.0,
+    "inc06": 0.0,
+    "inc07": 0.0,
+    "inc08": 0.0,
+    "inc09": 0.0,
+    "inc10": 0.0,
+    "inc11": 0.0,
+    "inc12": 0.0,
+    "inc13": 0.0,
+    "inc14": 0.0,
+    "inc15": 0.0,
+    "inc16": 0.0,
+    "inc17": 0.0,
+    "income": 0.0,
+    "inc_drug": 0.0,
+    "inc_nondrug": 0.0,
+    "uinc01": 0.0,
+    "uinc02": 0.0,
+    "uinc03": 0.0,
+    "uinc04": 0.0,
+    "uinc05": 150.0,
+    "uinc06": 0.0,
+    "uinc07": 0.0,
+    "uinc08": 0.0,
+    "uinc09": 0.0,
+    "uinc10": 0.0,
+    "uinc11": 0.0,
+    "uinc12": 0.0,
+    "uinc13": 1950.0,
+    "uinc14": 1500.0,
+    "uinc15": 0.0,
+    "uinc16": 1500.0,
+    "uinc17": 0.0,
+    "uincome": 5100.0,
+    "uinc_drug": 0.0,
+    "uinc_nondrug": 0.0,
+    "hos_guid": null,
+    "hos_guid_ext": null
+  },
+  {
+    "an": "540000787",
+    "hn": "530146052",
+    "dchdate": "2011-10-25",
+    "pttype": "02",
+    "pcode": null,
+    "inc01": 0.0,
+    "inc02": 0.0,
+    "inc03": 0.0,
+    "inc04": 0.0,
+    "inc05": 0.0,
+    "inc06": 0.0,
+    "inc07": 0.0,
+    "inc08": 0.0,
+    "inc09": 0.0,
+    "inc10": 0.0,
+    "inc11": 0.0,
+    "inc12": 0.0,
+    "inc13": 0.0,
+    "inc14": 0.0,
+    "inc15": 0.0,
+    "inc16": 0.0,
+    "inc17": 0.0,
+    "income": 0.0,
+    "inc_drug": 0.0,
+    "inc_nondrug": 0.0,
+    "uinc01": 0.0,
+    "uinc02": 0.0,
+    "uinc03": 0.0,
+    "uinc04": 0.0,
+    "uinc05": 650.0,
+    "uinc06": 0.0,
+    "uinc07": 0.0,
+    "uinc08": 0.0,
+    "uinc09": 0.0,
+    "uinc10": 0.0,
+    "uinc11": 0.0,
+    "uinc12": 0.0,
+    "uinc13": 1050.0,
+    "uinc14": 1800.0,
+    "uinc15": 0.0,
+    "uinc16": 1800.0,
+    "uinc17": 0.0,
+    "uincome": 5300.0,
+    "uinc_drug": 0.0,
+    "uinc_nondrug": 0.0,
+    "hos_guid": null,
+    "hos_guid_ext": null
+  },
+  {
+    "an": "540000788",
+    "hn": "530122845",
+    "dchdate": "2011-10-25",
+    "pttype": "02",
+    "pcode": null,
+    "inc01": 610.0,
+    "inc02": 0.0,
+    "inc03": 0.0,
+    "inc04": 0.0,
+    "inc05": 0.0,
+    "inc06": 0.0,
+    "inc07": 0.0,
+    "inc08": 0.0,
+    "inc09": 0.0,
+    "inc10": 0.0,
+    "inc11": 0.0,
+    "inc12": 0.0,
+    "inc13": 0.0,
+    "inc14": 0.0,
+    "inc15": 0.0,
+    "inc16": 0.0,
+    "inc17": 0.0,
+    "income": 610.0,
+    "inc_drug": 0.0,
+    "inc_nondrug": 0.0,
+    "uinc01": 1090.0,
+    "uinc02": 0.0,
+    "uinc03": 0.0,
+    "uinc04": 0.0,
+    "uinc05": 0.0,
+    "uinc06": 0.0,
+    "uinc07": 0.0,
+    "uinc08": 0.0,
+    "uinc09": 0.0,
+    "uinc10": 0.0,
+    "uinc11": 0.0,
+    "uinc12": 0.0,
+    "uinc13": 1250.0,
+    "uinc14": 1800.0,
+    "uinc15": 0.0,
+    "uinc16": 1800.0,
+    "uinc17": 0.0,
+    "uincome": 5940.0,
+    "uinc_drug": 0.0,
+    "uinc_nondrug": 0.0,
+    "hos_guid": null,
+    "hos_guid_ext": null
+  },
+  {
+    "an": "540000789",
+    "hn": "530003952",
+    "dchdate": "2011-10-26",
+    "pttype": "11",
+    "pcode": null,
+    "inc01": 0.0,
+    "inc02": 0.0,
+    "inc03": 0.0,
+    "inc04": 0.0,
+    "inc05": 0.0,
+    "inc06": 0.0,
+    "inc07": 0.0,
+    "inc08": 0.0,
+    "inc09": 0.0,
+    "inc10": 0.0,
+    "inc11": 0.0,
+    "inc12": 0.0,
+    "inc13": 0.0,
+    "inc14": 0.0,
+    "inc15": 0.0,
+    "inc16": 0.0,
+    "inc17": 0.0,
+    "income": 0.0,
+    "inc_drug": 0.0,
+    "inc_nondrug": 0.0,
+    "uinc01": 0.0,
+    "uinc02": 0.0,
+    "uinc03": 0.0,
+    "uinc04": 0.0,
+    "uinc05": 0.0,
+    "uinc06": 0.0,
+    "uinc07": 0.0,
+    "uinc08": 0.0,
+    "uinc09": 0.0,
+    "uinc10": 0.0,
+    "uinc11": 0.0,
+    "uinc12": 0.0,
+    "uinc13": 2250.0,
+    "uinc14": 1800.0,
+    "uinc15": 0.0,
+    "uinc16": 1800.0,
+    "uinc17": 0.0,
+    "uincome": 5850.0,
+    "uinc_drug": 0.0,
+    "uinc_nondrug": 0.0,
+    "hos_guid": null,
+    "hos_guid_ext": null
+  },
+  {
+    "an": "540000791",
+    "hn": "530104050",
+    "dchdate": "2011-10-26",
+    "pttype": "11",
+    "pcode": null,
+    "inc01": 0.0,
+    "inc02": 0.0,
+    "inc03": 0.0,
+    "inc04": 0.0,
+    "inc05": 0.0,
+    "inc06": 0.0,
+    "inc07": 0.0,
+    "inc08": 0.0,
+    "inc09": 0.0,
+    "inc10": 0.0,
+    "inc11": 0.0,
+    "inc12": 0.0,
+    "inc13": 0.0,
+    "inc14": 0.0,
+    "inc15": 0.0,
+    "inc16": 0.0,
+    "inc17": 0.0,
+    "income": 0.0,
+    "inc_drug": 0.0,
+    "inc_nondrug": 0.0,
+    "uinc01": 0.0,
+    "uinc02": 0.0,
+    "uinc03": 0.0,
+    "uinc04": 0.0,
+    "uinc05": 0.0,
+    "uinc06": 0.0,
+    "uinc07": 0.0,
+    "uinc08": 0.0,
+    "uinc09": 0.0,
+    "uinc10": 0.0,
+    "uinc11": 0.0,
+    "uinc12": 0.0,
+    "uinc13": 2400.0,
+    "uinc14": 2100.0,
+    "uinc15": 0.0,
+    "uinc16": 2100.0,
+    "uinc17": 0.0,
+    "uincome": 6600.0,
+    "uinc_drug": 0.0,
+    "uinc_nondrug": 0.0,
+    "hos_guid": null,
+    "hos_guid_ext": null
+  },
+  {
+    "an": "540000792",
+    "hn": "530219951",
+    "dchdate": "2011-10-26",
+    "pttype": "11",
+    "pcode": null,
+    "inc01": 0.0,
+    "inc02": 0.0,
+    "inc03": 0.0,
+    "inc04": 0.0,
+    "inc05": 0.0,
+    "inc06": 0.0,
+    "inc07": 0.0,
+    "inc08": 0.0,
+    "inc09": 0.0,
+    "inc10": 0.0,
+    "inc11": 0.0,
+    "inc12": 0.0,
+    "inc13": 0.0,
+    "inc14": 0.0,
+    "inc15": 0.0,
+    "inc16": 0.0,
+    "inc17": 0.0,
+    "income": 0.0,
+    "inc_drug": 0.0,
+    "inc_nondrug": 0.0,
+    "uinc01": 0.0,
+    "uinc02": 0.0,
+    "uinc03": 0.0,
+    "uinc04": 0.0,
+    "uinc05": 0.0,
+    "uinc06": 0.0,
+    "uinc07": 0.0,
+    "uinc08": 0.0,
+    "uinc09": 0.0,
+    "uinc10": 0.0,
+    "uinc11": 0.0,
+    "uinc12": 0.0,
+    "uinc13": 1650.0,
+    "uinc14": 1500.0,
+    "uinc15": 0.0,
+    "uinc16": 1500.0,
+    "uinc17": 0.0,
+    "uincome": 4650.0,
+    "uinc_drug": 0.0,
+    "uinc_nondrug": 0.0,
+    "hos_guid": null,
+    "hos_guid_ext": null
+  },
+  {
+    "an": "540000793",
+    "hn": "530047553",
+    "dchdate": "2011-10-21",
+    "pttype": "74",
+    "pcode": null,
+    "inc01": 0.0,
+    "inc02": 0.0,
+    "inc03": 0.0,
+    "inc04": 0.0,
+    "inc05": 0.0,
+    "inc06": 0.0,
+    "inc07": 0.0,
+    "inc08": 0.0,
+    "inc09": 0.0,
+    "inc10": 0.0,
+    "inc11": 0.0,
+    "inc12": 0.0,
+    "inc13": 0.0,
+    "inc14": 0.0,
+    "inc15": 0.0,
+    "inc16": 0.0,
+    "inc17": 0.0,
+    "income": 0.0,
+    "inc_drug": 0.0,
+    "inc_nondrug": 0.0,
+    "uinc01": 0.0,
+    "uinc02": 0.0,
+    "uinc03": 0.0,
+    "uinc04": 0.0,
+    "uinc05": 0.0,
+    "uinc06": 0.0,
+    "uinc07": 0.0,
+    "uinc08": 0.0,
+    "uinc09": 0.0,
+    "uinc10": 0.0,
+    "uinc11": 0.0,
+    "uinc12": 0.0,
+    "uinc13": 1200.0,
+    "uinc14": 1500.0,
+    "uinc15": 0.0,
+    "uinc16": 1500.0,
+    "uinc17": 0.0,
+    "uincome": 4200.0,
+    "uinc_drug": 0.0,
+    "uinc_nondrug": 0.0,
+    "hos_guid": null,
+    "hos_guid_ext": null
+  },
+  {
+    "an": "540000794",
+    "hn": "530036054",
+    "dchdate": "2011-10-21",
+    "pttype": "11",
+    "pcode": null,
+    "inc01": 0.0,
+    "inc02": 0.0,
+    "inc03": 0.0,
+    "inc04": 0.0,
+    "inc05": 0.0,
+    "inc06": 0.0,
+    "inc07": 0.0,
+    "inc08": 0.0,
+    "inc09": 0.0,
+    "inc10": 0.0,
+    "inc11": 0.0,
+    "inc12": 0.0,
+    "inc13": 0.0,
+    "inc14": 0.0,
+    "inc15": 0.0,
+    "inc16": 0.0,
+    "inc17": 0.0,
+    "income": 0.0,
+    "inc_drug": 0.0,
+    "inc_nondrug": 0.0,
+    "uinc01": 0.0,
+    "uinc02": 0.0,
+    "uinc03": 0.0,
+    "uinc04": 0.0,
+    "uinc05": 0.0,
+    "uinc06": 0.0,
+    "uinc07": 0.0,
+    "uinc08": 0.0,
+    "uinc09": 0.0,
+    "uinc10": 0.0,
+    "uinc11": 0.0,
+    "uinc12": 0.0,
+    "uinc13": 0.0,
+    "uinc14": 600.0,
+    "uinc15": 0.0,
+    "uinc16": 600.0,
+    "uinc17": 0.0,
+    "uincome": 1200.0,
+    "uinc_drug": 0.0,
+    "uinc_nondrug": 0.0,
+    "hos_guid": null,
+    "hos_guid_ext": null
+  }
+]
+```

@@ -1,0 +1,25 @@
+# `er_oper_code_type`
+
+## Columns
+
+| Column | Type | Null | Key | Default | Extra | Comment |
+|---|---|---|---|---|---|---|
+| er_oper_code_type_id | int(11) | NO | PRI | 0 |  |  |
+| er_oper_code_type_name | varchar(200) | YES | UNI | NULL |  |  |
+
+## Indexes
+
+| Index | Column | Unique | Sequence |
+|---|---|---|---|
+| ix_er_oper_code_type_name | er_oper_code_type_name | yes | 1 |
+| PRIMARY | er_oper_code_type_id | yes | 1 |
+
+## Foreign keys
+
+No declared foreign keys.
+
+## Sample rows (0)
+
+```json
+[]
+```

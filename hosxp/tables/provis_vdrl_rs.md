@@ -1,0 +1,47 @@
+# `provis_vdrl_rs`
+
+## Columns
+
+| Column | Type | Null | Key | Default | Extra | Comment |
+|---|---|---|---|---|---|---|
+| code | char(1) | NO | PRI |  |  |  |
+| name | varchar(150) | YES | UNI | NULL |  |  |
+| hos_guid | varchar(38) | YES |  | NULL |  |  |
+
+## Indexes
+
+| Index | Column | Unique | Sequence |
+|---|---|---|---|
+| ix_name | name | yes | 1 |
+| PRIMARY | code | yes | 1 |
+
+## Foreign keys
+
+No declared foreign keys.
+
+## Sample rows (4)
+
+```json
+[
+  {
+    "code": "1",
+    "name": "ปกติ",
+    "hos_guid": null
+  },
+  {
+    "code": "2",
+    "name": "ผิดปกติ",
+    "hos_guid": null
+  },
+  {
+    "code": "8",
+    "name": "ไม่ตรวจ",
+    "hos_guid": null
+  },
+  {
+    "code": "9",
+    "name": "รอผลตรวจ",
+    "hos_guid": null
+  }
+]
+```

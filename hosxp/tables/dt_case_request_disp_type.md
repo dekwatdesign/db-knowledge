@@ -1,0 +1,37 @@
+# `dt_case_request_disp_type`
+
+## Columns
+
+| Column | Type | Null | Key | Default | Extra | Comment |
+|---|---|---|---|---|---|---|
+| dt_case_request_disp_type_id | int(11) | NO | PRI | 0 |  |  |
+| dt_case_request_disp_type_name | varchar(250) | YES |  | NULL |  |  |
+
+## Indexes
+
+| Index | Column | Unique | Sequence |
+|---|---|---|---|
+| PRIMARY | dt_case_request_disp_type_id | yes | 1 |
+
+## Foreign keys
+
+No declared foreign keys.
+
+## Sample rows (3)
+
+```json
+[
+  {
+    "dt_case_request_disp_type_id": 1,
+    "dt_case_request_disp_type_name": "ไม่มีผู้ป่วย"
+  },
+  {
+    "dt_case_request_disp_type_id": 2,
+    "dt_case_request_disp_type_name": "นัดรักษา"
+  },
+  {
+    "dt_case_request_disp_type_id": 3,
+    "dt_case_request_disp_type_name": "รักษาวันนี้"
+  }
+]
+```
