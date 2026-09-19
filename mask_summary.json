@@ -1,11 +1,16 @@
 {
-  "modified_files_count": 1,
+  "modified_files_count": 6,
   "total_ids": 0,
   "total_fnames": 0,
   "total_lnames": 0,
-  "total_fullnames": 1,
+  "total_fullnames": 36,
   "total_avatars": 0,
   "modified_files": [
-    "hosxp\\tables\\rptb_basic_list.md"
+    "yuwa-work\\tables\\work_custom_app_approval_flow_records.md",
+    "yuwa-work\\tables\\work_custom_app_service_request_messages.md",
+    "yuwa-work\\tables\\work_external_persons.md",
+    "yuwa-work\\tables\\work_official_travel_persons.md",
+    "yuwa-work\\tables\\work_payroll_run_slip_snapshots.md",
+    "yuwa-work\\tables\\work_payroll_run_staff.md"
   ]
 }

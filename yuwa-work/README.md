@@ -1,0 +1,98 @@
+# `yuwa-work` — LLM database context
+
+- Generated from read-only MySQL metadata and up to 8 sample rows per table.
+- Samples may contain sensitive data; restrict access before sharing with an external model.
+
+## Files
+
+- [AI context](AI_CONTEXT.md)
+- [Relationships](relationships.md)
+
+- [`phinxlog`](tables/phinxlog.md) — No comment
+- [`work_access_logs`](tables/work_access_logs.md) — No comment
+- [`work_accounts_role`](tables/work_accounts_role.md) — No comment
+- [`work_accounts_sessions`](tables/work_accounts_sessions.md) — No comment
+- [`work_accounts_work_times`](tables/work_accounts_work_times.md) — No comment
+- [`work_activity_logs`](tables/work_activity_logs.md) — No comment
+- [`work_approval_steps`](tables/work_approval_steps.md) — ตารางขั้นตอนการอนุมัติ
+- [`work_approvals`](tables/work_approvals.md) — ตารางคำขออนุมัติ
+- [`work_apps`](tables/work_apps.md) — No comment
+- [`work_custom_app_approval_flow_records`](tables/work_custom_app_approval_flow_records.md) — No comment
+- [`work_custom_app_approval_flow_steps`](tables/work_custom_app_approval_flow_steps.md) — No comment
+- [`work_custom_app_service_fields`](tables/work_custom_app_service_fields.md) — No comment
+- [`work_custom_app_service_notifications`](tables/work_custom_app_service_notifications.md) — No comment
+- [`work_custom_app_service_operation_fields`](tables/work_custom_app_service_operation_fields.md) — No comment
+- [`work_custom_app_service_request_chat_reads`](tables/work_custom_app_service_request_chat_reads.md) — No comment
+- [`work_custom_app_service_request_history`](tables/work_custom_app_service_request_history.md) — No comment
+- [`work_custom_app_service_request_messages`](tables/work_custom_app_service_request_messages.md) — No comment
+- [`work_custom_app_service_requests`](tables/work_custom_app_service_requests.md) — No comment
+- [`work_custom_app_service_reviews`](tables/work_custom_app_service_reviews.md) — ตารางเก็บการประเมินบริการ (star rating + feedback)
+- [`work_custom_app_service_settings_scopes`](tables/work_custom_app_service_settings_scopes.md) — No comment
+- [`work_custom_app_services`](tables/work_custom_app_services.md) — No comment
+- [`work_custom_apps`](tables/work_custom_apps.md) — No comment
+- [`work_events`](tables/work_events.md) — No comment
+- [`work_events_datetimes`](tables/work_events_datetimes.md) — No comment
+- [`work_events_statuses`](tables/work_events_statuses.md) — No comment
+- [`work_external_persons`](tables/work_external_persons.md) — บุคคลภายนอก (ไม่ใช่บุคลากรในระบบ GTW)
+- [`work_external_services`](tables/work_external_services.md) — No comment
+- [`work_favorites`](tables/work_favorites.md) — รายการโปรดของผู้ใช้แต่ละคน
+- [`work_gtw_departments`](tables/work_gtw_departments.md) — No comment
+- [`work_gtw_hip`](tables/work_gtw_hip.md) — No comment
+- [`work_lab_health_result_files`](tables/work_lab_health_result_files.md) — No comment
+- [`work_lab_health_results`](tables/work_lab_health_results.md) — No comment
+- [`work_menu_badge_settings`](tables/work_menu_badge_settings.md) — No comment
+- [`work_menus`](tables/work_menus.md) — No comment
+- [`work_money_sources`](tables/work_money_sources.md) — No comment
+- [`work_notification_settings`](tables/work_notification_settings.md) — No comment
+- [`work_official_travel`](tables/work_official_travel.md) — No comment
+- [`work_official_travel_files`](tables/work_official_travel_files.md) — No comment
+- [`work_official_travel_finance_logs`](tables/work_official_travel_finance_logs.md) — No comment
+- [`work_official_travel_integration_logs`](tables/work_official_travel_integration_logs.md) — No comment
+- [`work_official_travel_persons`](tables/work_official_travel_persons.md) — No comment
+- [`work_official_travel_quality_audits`](tables/work_official_travel_quality_audits.md) — No comment
+- [`work_official_travel_workflow_history`](tables/work_official_travel_workflow_history.md) — No comment
+- [`work_online_form_fields`](tables/work_online_form_fields.md) — No comment
+- [`work_online_form_groups`](tables/work_online_form_groups.md) — No comment
+- [`work_online_form_notifications`](tables/work_online_form_notifications.md) — No comment
+- [`work_online_form_pdf_templates`](tables/work_online_form_pdf_templates.md) — No comment
+- [`work_online_form_shares`](tables/work_online_form_shares.md) — No comment
+- [`work_online_form_submissions`](tables/work_online_form_submissions.md) — No comment
+- [`work_online_forms`](tables/work_online_forms.md) — No comment
+- [`work_payroll_categories`](tables/work_payroll_categories.md) — No comment
+- [`work_payroll_run_items`](tables/work_payroll_run_items.md) — No comment
+- [`work_payroll_run_slip_snapshots`](tables/work_payroll_run_slip_snapshots.md) — No comment
+- [`work_payroll_run_staff`](tables/work_payroll_run_staff.md) — No comment
+- [`work_payroll_runs`](tables/work_payroll_runs.md) — No comment
+- [`work_payroll_slip_settings`](tables/work_payroll_slip_settings.md) — No comment
+- [`work_permissions`](tables/work_permissions.md) — No comment
+- [`work_plan_bsc_dimensions`](tables/work_plan_bsc_dimensions.md) — No comment
+- [`work_plan_export_history`](tables/work_plan_export_history.md) — No comment
+- [`work_plan_feedback`](tables/work_plan_feedback.md) — No comment
+- [`work_plan_kpi_approval_records`](tables/work_plan_kpi_approval_records.md) — No comment
+- [`work_plan_kpi_approval_steps`](tables/work_plan_kpi_approval_steps.md) — No comment
+- [`work_plan_kpi_approval_templates`](tables/work_plan_kpi_approval_templates.md) — No comment
+- [`work_plan_kpi_categories`](tables/work_plan_kpi_categories.md) — No comment
+- [`work_plan_kpi_change_requests`](tables/work_plan_kpi_change_requests.md) — No comment
+- [`work_plan_kpi_evidence_events`](tables/work_plan_kpi_evidence_events.md) — No comment
+- [`work_plan_kpi_periods`](tables/work_plan_kpi_periods.md) — No comment
+- [`work_plan_kpi_results`](tables/work_plan_kpi_results.md) — No comment
+- [`work_plan_kpi_targets`](tables/work_plan_kpi_targets.md) — No comment
+- [`work_plan_kpis`](tables/work_plan_kpis.md) — No comment
+- [`work_plan_report_schedules`](tables/work_plan_report_schedules.md) — No comment
+- [`work_plan_report_templates`](tables/work_plan_report_templates.md) — No comment
+- [`work_plan_settings`](tables/work_plan_settings.md) — No comment
+- [`work_plan_strategy_initiatives`](tables/work_plan_strategy_initiatives.md) — No comment
+- [`work_plan_strategy_objectives`](tables/work_plan_strategy_objectives.md) — No comment
+- [`work_prefix_name`](tables/work_prefix_name.md) — No comment
+- [`work_project_milestones`](tables/work_project_milestones.md) — ตาราง milestone โครงการ
+- [`work_project_tasks`](tables/work_project_tasks.md) — ตารางงานในโครงการ
+- [`work_projects`](tables/work_projects.md) — ตารางโครงการ
+- [`work_roles`](tables/work_roles.md) — No comment
+- [`work_roles_permissions`](tables/work_roles_permissions.md) — No comment
+- [`work_statuses`](tables/work_statuses.md) — No comment
+- [`work_system_logs`](tables/work_system_logs.md) — No comment
+- [`work_system_migration_run_items`](tables/work_system_migration_run_items.md) — No comment
+- [`work_system_migration_runs`](tables/work_system_migration_runs.md) — No comment
+- [`work_system_migration_versions`](tables/work_system_migration_versions.md) — No comment
+- [`work_table_preferences`](tables/work_table_preferences.md) — Global table preferences (column visibility, sort order)
+- [`work_user_notes`](tables/work_user_notes.md) — My Note ของผู้ใช้ พร้อมการแชร์ภายในและตัวเลือกให้นับเป็นงาน
