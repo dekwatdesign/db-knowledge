@@ -1,4 +1,39 @@
+# Environments and credentials
 .env
-generated/
-.venv/
+.env.*
+!.env.example
+*.pem
+*.key
+connections.json
+settings.json
+*.log
+
+# Python
 __pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+
+# Node / Frontend
+node_modules/
+dist/
+.vite/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Tauri & Rust build artifacts
+src-tauri/target/
+*.exe
+*.msi
+*.pdb
+
+# Generated Knowledge Outputs
+generated/
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,286 @@
+/* LINE Seed Sans TH Web Fonts (Self-hosted) */
+@font-face {
+  font-family: 'LINE Seed Sans TH';
+  src: url('/fonts/LINESeedSansTH_Th.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'LINE Seed Sans TH';
+  src: url('/fonts/LINESeedSansTH_Rg.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'LINE Seed Sans TH';
+  src: url('/fonts/LINESeedSansTH_Bd.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'LINE Seed Sans TH';
+  src: url('/fonts/LINESeedSansTH_XBd.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'LINE Seed Sans TH';
+  src: url('/fonts/LINESeedSansTH_He.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Lucian UX/UI Design Tokens (Theme Variables) */
+:root {
+  color-scheme: light;
+  --ux-page: #F7F5F0;
+  --ux-surface: #FFFFFF;
+  --ux-surface-2: #F2EFE9;
+  --ux-surface-3: #E6E2D8;
+  --ux-ink: #14131A;
+  --ux-ink-2: #524E5C;
+  --ux-ink-3: #898494;
+  --ux-line: rgba(20, 19, 26, 0.08);
+  --ux-line-2: rgba(20, 19, 26, 0.16);
+  --ux-accent: #6350E8;
+  --ux-accent-2: #2581DF;
+  --ux-accent-soft: rgba(99, 80, 232, 0.10);
+  --ux-accent-ink: #FFFFFF;
+  --ux-mint: #0E9F6E;
+  --ux-mint-soft: rgba(14, 159, 110, 0.12);
+  --ux-warn: #D97706;
+  --ux-warn-soft: rgba(217, 119, 6, 0.12);
+  --ux-danger: #E02424;
+  --ux-danger-soft: rgba(224, 36, 36, 0.12);
+  --ux-glass: rgba(255, 255, 255, 0.65);
+  --ux-glass-line: rgba(255, 255, 255, 0.85);
+  --ux-shadow: rgba(30, 20, 60, 0.08);
+  --ux-shadow-strong: rgba(30, 20, 60, 0.22);
+  --ux-grad: linear-gradient(135deg, #7A5AF8, #36BFFA 55%, #10B981);
+  --ux-grad-surface: linear-gradient(135deg, rgba(122, 90, 248, 0.05), rgba(54, 191, 250, 0.05));
+  --ux-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ux-spring: cubic-bezier(0.34, 1.45, 0.64, 1);
+}
+
+:root[data-theme="dark"],
+body.dark {
+  color-scheme: dark;
+  --ux-page: #0B0D14;
+  --ux-surface: #121520;
+  --ux-surface-2: #1A1E2E;
+  --ux-surface-3: #242A3E;
+  --ux-ink: #F4F2EE;
+  --ux-ink-2: rgba(244, 242, 238, 0.70);
+  --ux-ink-3: rgba(244, 242, 238, 0.44);
+  --ux-line: rgba(255, 255, 255, 0.09);
+  --ux-line-2: rgba(255, 255, 255, 0.18);
+  --ux-accent: #A78BFA;
+  --ux-accent-2: #60A5FA;
+  --ux-accent-soft: rgba(167, 139, 250, 0.15);
+  --ux-accent-ink: #0A0A0F;
+  --ux-mint: #34D399;
+  --ux-mint-soft: rgba(52, 211, 153, 0.15);
+  --ux-warn: #FBBF24;
+  --ux-warn-soft: rgba(251, 191, 36, 0.15);
+  --ux-danger: #F87171;
+  --ux-danger-soft: rgba(248, 113, 113, 0.15);
+  --ux-glass: rgba(18, 21, 32, 0.75);
+  --ux-glass-line: rgba(255, 255, 255, 0.14);
+  --ux-shadow: rgba(0, 0, 0, 0.50);
+  --ux-shadow-strong: rgba(0, 0, 0, 0.80);
+  --ux-grad: linear-gradient(135deg, #A78BFA, #60A5FA 55%, #34D399);
+  --ux-grad-surface: linear-gradient(135deg, rgba(167, 139, 250, 0.08), rgba(96, 165, 250, 0.08));
+}
+
+/* Base Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--ux-page);
+  color: var(--ux-ink);
+  font-family: 'LINE Seed Sans TH', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  user-select: none;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--ux-line-2);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ux-ink-3);
+}
+
+/* Lucian Element Styles */
+.ux-glass-card {
+  background: var(--ux-surface);
+  border: 1px solid var(--ux-line);
+  box-shadow: 0 4px 20px -2px var(--ux-shadow);
+  border-radius: 18px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: transform 0.3s var(--ux-spring), box-shadow 0.3s var(--ux-ease), border-color 0.3s var(--ux-ease);
+}
+
+.ux-glass-card:hover {
+  border-color: var(--ux-line-2);
+}
+
+.ux-liquid-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ux-accent-ink);
+  background: var(--ux-grad);
+  border: 0;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 10px 25px -8px color-mix(in srgb, var(--ux-accent) 65%, transparent), 0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+  transition: transform 0.4s var(--ux-spring), box-shadow 0.4s var(--ux-ease), filter 0.3s var(--ux-ease);
+}
+
+.ux-liquid-btn:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 16px 32px -10px color-mix(in srgb, var(--ux-accent) 80%, transparent), 0 0 0 1.5px rgba(255, 255, 255, 0.35) inset;
+}
+
+.ux-liquid-btn:active {
+  transform: translateY(0px) scale(0.98);
+}
+
+.ux-liquid-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.ux-btn-secondary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ux-ink);
+  background: var(--ux-surface-2);
+  border: 1px solid var(--ux-line);
+  cursor: pointer;
+  transition: all 0.25s var(--ux-ease);
+}
+
+.ux-btn-secondary:hover {
+  background: var(--ux-surface-3);
+  border-color: var(--ux-line-2);
+  transform: translateY(-1px);
+}
+
+.ux-input {
+  width: 100%;
+  padding: 10px 14px;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--ux-ink);
+  background: var(--ux-surface);
+  border: 1px solid var(--ux-line);
+  border-radius: 12px;
+  outline: none;
+  transition: border-color 0.25s var(--ux-ease), box-shadow 0.25s var(--ux-ease);
+}
+
+.ux-input:focus {
+  border-color: var(--ux-accent);
+  box-shadow: 0 0 0 3px var(--ux-accent-soft);
+}
+
+.ux-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 999px;
+  letter-spacing: -0.01em;
+}
+
+.ux-badge-accent {
+  background: var(--ux-accent-soft);
+  color: var(--ux-accent);
+}
+
+.ux-badge-mint {
+  background: var(--ux-mint-soft);
+  color: var(--ux-mint);
+}
+
+.ux-badge-warn {
+  background: var(--ux-warn-soft);
+  color: var(--ux-warn);
+}
+
+.ux-badge-danger {
+  background: var(--ux-danger-soft);
+  color: var(--ux-danger);
+}
+
+/* Sheen animation */
+.ux-sheen {
+  position: absolute;
+  top: -50%;
+  bottom: -50%;
+  left: 0;
+  width: 45%;
+  pointer-events: none;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.4) 50%, transparent);
+  transform: translateX(-150%) skewX(-15deg);
+  transition: transform 0.9s var(--ux-ease);
+}
+
+.ux-liquid-btn:hover .ux-sheen {
+  transform: translateX(350%) skewX(-15deg);
+}
