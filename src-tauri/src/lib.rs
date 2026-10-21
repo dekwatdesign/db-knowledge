@@ -31,20 +31,34 @@ fn save_app_settings(settings: AppSettings) -> Result<(), String> {
 }
 
 #[tauri::command]
-fn test_db(config: DbConnectionConfig) -> DbTestResult {
-    db::test_connection(&config)
+async fn test_db(config: DbConnectionConfig) -> DbTestResult {
+    tokio::task::spawn_blocking(move || db::test_connection(&config))
+        .await
+        .unwrap_or_else(|e| DbTestResult {
+            success: false,
+            message: format!("Task execution error: {}", e),
+            latency_ms: None,
+            version: None,
+            table_count: None,
+        })
 }
 
 #[tauri::command]
-fn fetch_tables(config: DbConnectionConfig) -> Result<Vec<TableMeta>, String> {
-    let opts = db::create_opts(&config);
-    let mut conn = mysql::Conn::new(opts).map_err(|e| format!("Connection error: {}", e))?;
-    db::get_tables(&mut conn, &config.database)
+async fn fetch_tables(config: DbConnectionConfig) -> Result<Vec<TableMeta>, String> {
+    tokio::task::spawn_blocking(move || {
+        let opts = db::create_opts(&config);
+        let mut conn = mysql::Conn::new(opts).map_err(|e| format!("Connection error: {}", e))?;
+        db::get_tables(&mut conn, &config.database)
+    })
+    .await
+    .map_err(|e| format!("Task execution error: {}", e))?
 }
 
 #[tauri::command]
-fn test_ai(config: AiConfig) -> Result<String, String> {
-    ai::test_ai_connection(&config)
+async fn test_ai(config: AiConfig) -> Result<String, String> {
+    tokio::task::spawn_blocking(move || ai::test_ai_connection(&config))
+        .await
+        .map_err(|e| format!("Task execution error: {}", e))?
 }
 
 #[tauri::command]

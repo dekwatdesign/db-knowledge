@@ -33,7 +33,10 @@ pub fn test_ai_connection(config: &AiConfig) -> Result<String, String> {
         return Ok("AI service is currently disabled".to_string());
     }
     let test_prompt = "Say 'OK' if you can read this message.";
-    call_provider(config, test_prompt)
+    // Cap test connection timeout to at most 15 seconds to avoid UI/network hang
+    let mut test_config = config.clone();
+    test_config.timeout_seconds = test_config.timeout_seconds.clamp(5, 15);
+    call_provider(&test_config, test_prompt)
 }
 
 fn call_provider(config: &AiConfig, prompt: &str) -> Result<String, String> {
@@ -60,7 +63,9 @@ fn call_provider(config: &AiConfig, prompt: &str) -> Result<String, String> {
                 .map_err(|e| format!("Ollama request failed: {}", e))?;
 
             if !resp.status().is_success() {
-                return Err(format!("Ollama returned HTTP {}", resp.status()));
+                let status = resp.status();
+                let err_text = resp.text().unwrap_or_default();
+                return Err(format!("Ollama returned HTTP {}: {}", status, err_text));
             }
 
             let data: serde_json::Value = resp
@@ -127,7 +132,9 @@ fn call_provider(config: &AiConfig, prompt: &str) -> Result<String, String> {
                 .map_err(|e| format!("Anthropic request failed: {}", e))?;
 
             if !resp.status().is_success() {
-                return Err(format!("Anthropic returned HTTP {}", resp.status()));
+                let status = resp.status();
+                let err_text = resp.text().unwrap_or_default();
+                return Err(format!("Anthropic returned HTTP {}: {}", status, err_text));
             }
 
             let data: serde_json::Value = resp
@@ -135,47 +142,112 @@ fn call_provider(config: &AiConfig, prompt: &str) -> Result<String, String> {
                 .map_err(|e| format!("Failed to parse Anthropic JSON: {}", e))?;
 
             let text = data
-                .pointer("/content/0/text")
-                .and_then(|v| v.as_str())
-                .ok_or_else(|| "Anthropic response missing text".to_string())?;
+                .get("content")
+                .and_then(|v| v.as_array())
+                .map(|blocks| {
+                    blocks
+                        .iter()
+                        .filter_map(|b| {
+                            if b.get("type").and_then(|t| t.as_str()) == Some("text") {
+                                b.get("text").and_then(|t| t.as_str())
+                            } else {
+                                None
+                            }
+                        })
+                        .collect::<Vec<_>>()
+                        .join("\n")
+                })
+                .unwrap_or_default();
 
-            Ok(text.to_string())
+            if text.trim().is_empty() {
+                return Err("Anthropic response missing text content".to_string());
+            }
+
+            Ok(text.trim().to_string())
         }
         "gemini" => {
-            let url = format!(
-                "{}/models/{}:generateContent?key={}",
-                base_url, config.model, config.api_key
-            );
+            // Strip any leading "models/" or trailing ":generateContent" that users might copy-paste
+            let clean_model = config.model.trim()
+                .trim_start_matches("models/")
+                .trim_end_matches(":generateContent");
+
+            let url = if config.api_key.is_empty() {
+                format!("{}/models/{}:generateContent", base_url, clean_model)
+            } else {
+                format!(
+                    "{}/models/{}:generateContent?key={}",
+                    base_url, clean_model, config.api_key
+                )
+            };
+
             let body = serde_json::json!({
                 "contents": [
                     {
+                        "role": "user",
                         "parts": [
                             { "text": prompt }
                         ]
                     }
-                ]
+                ],
+                "generationConfig": {
+                    "maxOutputTokens": config.max_output_tokens
+                }
             });
 
-            let resp = client
-                .post(&url)
+            let mut req = client.post(&url);
+            if !config.api_key.is_empty() {
+                req = req.header("x-goog-api-key", &config.api_key);
+            }
+
+            let resp = req
                 .json(&body)
                 .send()
                 .map_err(|e| format!("Gemini request failed: {}", e))?;
 
             if !resp.status().is_success() {
-                return Err(format!("Gemini returned HTTP {}", resp.status()));
+                let status = resp.status();
+                let err_text = resp.text().unwrap_or_default();
+                return Err(format!("Gemini returned HTTP {}: {}", status, err_text));
             }
 
             let data: serde_json::Value = resp
                 .json()
                 .map_err(|e| format!("Failed to parse Gemini response: {}", e))?;
 
-            let text = data
-                .pointer("/candidates/0/content/parts/0/text")
-                .and_then(|v| v.as_str())
-                .ok_or_else(|| "Gemini response missing text candidate".to_string())?;
+            // Extract candidate text while filtering out "thought" parts from thinking models
+            let parts = data
+                .pointer("/candidates/0/content/parts")
+                .and_then(|v| v.as_array());
 
-            Ok(text.to_string())
+            let text = if let Some(parts_arr) = parts {
+                parts_arr
+                    .iter()
+                    .filter_map(|p| {
+                        let is_thought = p.get("thought").and_then(|v| v.as_bool()).unwrap_or(false);
+                        if !is_thought {
+                            p.get("text").and_then(|v| v.as_str())
+                        } else {
+                            None
+                        }
+                    })
+                    .collect::<Vec<_>>()
+                    .join("\n")
+            } else {
+                String::new()
+            };
+
+            if text.trim().is_empty() {
+                let fallback = data
+                    .pointer("/candidates/0/content/parts/0/text")
+                    .and_then(|v| v.as_str())
+                    .unwrap_or_default();
+                if fallback.trim().is_empty() {
+                    return Err("Gemini response missing text candidate".to_string());
+                }
+                Ok(fallback.trim().to_string())
+            } else {
+                Ok(text.trim().to_string())
+            }
         }
         other => Err(format!("Unsupported AI API type: '{}'", other)),
     }
@@ -207,4 +279,57 @@ pub fn generate_fallback_summary(summary: &serde_json::Value, note: &str) -> Str
          {}",
         tables, note
     )
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_disabled_ai() {
+        let config = AiConfig {
+            api_type: "disabled".to_string(),
+            base_url: String::new(),
+            model: String::new(),
+            api_key: String::new(),
+            timeout_seconds: 180,
+            max_output_tokens: 4096,
+            allow_remote: false,
+        };
+        let res = test_ai_connection(&config);
+        assert!(res.is_ok());
+        assert_eq!(res.unwrap(), "AI service is currently disabled");
+    }
+
+    #[test]
+    fn test_gemini_model_cleaning() {
+        let raw = "models/gemini-flash-latest:generateContent";
+        let cleaned = raw
+            .trim()
+            .trim_start_matches("models/")
+            .trim_end_matches(":generateContent");
+        assert_eq!(cleaned, "gemini-flash-latest");
+    }
+
+    #[test]
+    fn test_gemini_connection_twice() {
+        let config = AiConfig {
+            api_type: "gemini".to_string(),
+            base_url: "https://generativelanguage.googleapis.com/v1beta".to_string(),
+            model: "gemini-3.5-flash-lite".to_string(),
+            api_key: "AQ.Ab8RN6JeMpNOnAlEwNBQzeEMMgSXah5UACPNZZ1bxQjosR6jDg".to_string(),
+            timeout_seconds: 15,
+            max_output_tokens: 100,
+            allow_remote: true,
+        };
+        // 1st call
+        let res1 = test_ai_connection(&config);
+        assert!(res1.is_ok(), "First call failed: {:?}", res1.err());
+        assert_eq!(res1.unwrap(), "OK");
+
+        // 2nd call (verifying 2nd call works without hanging or error)
+        let res2 = test_ai_connection(&config);
+        assert!(res2.is_ok(), "Second call failed: {:?}", res2.err());
+        assert_eq!(res2.unwrap(), "OK");
+    }
 }

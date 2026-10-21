@@ -23,6 +23,10 @@ if exist "src-tauri\target\release\db-knowledge-app.exe" (
     exit /b 0
 )
 
-echo No pre-built production binary found. Starting development environment...
-call "C:\Program Files (x86)\Microsoft Visual Studio\18\BuildTools\VC\Auxiliary\Build\vcvars64.bat"
-cargo tauri dev
+echo No pre-built production binary found.
+echo Building standalone executable now...
+call build_app.bat
+if exist "db-knowledge-app.exe" (
+    start "" "db-knowledge-app.exe"
+)
+exit /b 0

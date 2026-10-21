@@ -52,9 +52,9 @@ export const AiSettingsTab: React.FC<AiSettingsTabProps> = ({
     {
       id: 'gemini',
       label: 'Google Gemini',
-      desc: 'รองรับ Gemini 1.5 Flash / 2.0 ผ่าน generateContent API',
+      desc: 'รองรับ Gemini 2.5 / 3.5 Flash ผ่าน generateContent API',
       defaultUrl: 'https://generativelanguage.googleapis.com/v1beta',
-      defaultModel: 'gemini-1.5-flash',
+      defaultModel: 'gemini-3.5-flash-lite',
     },
     {
       id: 'disabled',
@@ -66,11 +66,16 @@ export const AiSettingsTab: React.FC<AiSettingsTabProps> = ({
   ];
 
   const handleSelectProvider = (prov: typeof providers[0]) => {
+    const isDefaultOrEmptyUrl =
+      !config.base_url || providers.some((p) => p.defaultUrl === config.base_url);
+    const isDefaultOrEmptyModel =
+      !config.model || providers.some((p) => p.defaultModel === config.model);
+
     setConfig({
       ...config,
       api_type: prov.id,
-      base_url: config.base_url || prov.defaultUrl,
-      model: config.model || prov.defaultModel,
+      base_url: isDefaultOrEmptyUrl ? prov.defaultUrl : config.base_url,
+      model: isDefaultOrEmptyModel ? prov.defaultModel : config.model,
     });
   };
 
@@ -78,7 +83,13 @@ export const AiSettingsTab: React.FC<AiSettingsTabProps> = ({
     setTesting(true);
     setTestResult(null);
     try {
-      const res = await testAi(config);
+      const cleanedModel = config.model.trim()
+        .replace(/^models\//, '')
+        .replace(/:generateContent$/, '');
+      const cleanedConfig = { ...config, model: cleanedModel };
+      setConfig(cleanedConfig);
+
+      const res = await testAi(cleanedConfig);
       setTestResult({
         ok: true,
         msg: `เชื่อมต่อสำเร็จ: ${res.slice(0, 150)}`,
@@ -166,9 +177,12 @@ export const AiSettingsTab: React.FC<AiSettingsTabProps> = ({
                 className="ux-input"
                 value={config.model}
                 onChange={(e) => setConfig({ ...config, model: e.target.value })}
-                placeholder="เช่น qwen2.5-coder:7b, gpt-4o, claude-3-5-sonnet"
+                placeholder="เช่น gemini-3.5-flash-lite, gpt-4o, claude-3-5-sonnet"
                 required
               />
+              <span className="form-hint">
+                สำหรับ Gemini ใส่เฉพาะชื่อโมเดล เช่น <code>gemini-3.5-flash-lite</code> (ไม่ต้องใส่ models/ หรือ :generateContent)
+              </span>
             </div>
 
             {/* Timeout */}
