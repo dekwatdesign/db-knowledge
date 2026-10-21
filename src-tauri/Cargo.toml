@@ -1,6 +1,6 @@
 [package]
 name = "db_knowledge_app"
-version = "0.1.0"
+version = "1.0.0"
 description = "DB Knowledge Generator - Windows App"
 authors = ["you"]
 license = ""
